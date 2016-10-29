@@ -1,5 +1,9 @@
 (function(document) {
-	// load resume data from JSON file
+	var model = {
+		resume: {}
+	};
+		
+	// use promises to create an XMLHttpRequest handler with error handling
 	function get(path) {
 		return new Promise(function(resolve, reject) {
 			var req = new XMLHttpRequest();
@@ -10,14 +14,13 @@
 					resolve(req.response);
 				} else {
 					// it failed
-					console.log(req.response)
-					reject(Error(req.statusText));
+					reject(req.status);
 				};
 			};
 		
 			req.onerror = function() {
 				// it failed with a network error
-				reject(Error("Network error.");
+				reject("Network error");
 			};
 		
 			req.send();
@@ -28,18 +31,18 @@
 		return JSON.parse(data);
 	}
 	
-	function loadResumeData() {
-		var resumeData = {};
-		
-		get("../resume.json")
+	var app = { 
+		init: function() { 
+			get("./resume.json")
 			.then(function(response) {
-				resumeData = getJSON(response);
-				console.log(resumeData);
+				model.resume = getJSON(response);
+				console.log(model.resume);
 			})
-			.catch(function(statusText) {
-				console.log(statusText);
+			.catch(function(status) {
+				console.log(status);
 			});
-	}
+		}
+	};
 	
-	loadResumeData();
+	app.init();
 })(document);
