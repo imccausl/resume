@@ -1,11 +1,8 @@
 (function(document) {
 	var model = {
 		resume: {}
-	};
-		
-	// use promises to create an XMLHttpRequest handler with error handling
-	function get(path) {
-		return new Promise(function(resolve, reject) {
+		get: function(path) {
+			return new Promise(function(resolve, reject) {
 			var req = new XMLHttpRequest();
 			req.open("GET", path);
 			req.onload = function() {
@@ -25,8 +22,9 @@
 		
 			req.send();
 		});
-	}
-	
+
+		}
+	};
 	
 	function getJSON(data) {
 		return JSON.parse(data);
@@ -34,7 +32,7 @@
 	
 	var app = { 
 		init: function() { 
-			get("./resume.json")
+			model.get("./resume.json")
 			.then(function(response) {
 				model.resume = getJSON(response);
 				console.log(model.resume);
