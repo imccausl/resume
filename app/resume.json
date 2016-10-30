@@ -181,12 +181,12 @@
     },
     "technicalSkills":{
 	    "title":"Technical Skills",
-	    "content":[
+	    "content":
         {
             "languages and frameworks":"HTML5, CSS3, Sass, JavaScript, jQuery, Jasmine, Bootstrap, Angular, Handlebars, Backbone",
             "development tools":"Coda, Git, Yeoman, Bower, Node/NPM, Grunt, Gulp",
             "operating systems":"macOS, Windows, iOS, Android, Linux/Unix",
             "applications":"Excel, Word, PointPoint, Adobe Acrobat, InDesign, OmniGraffle"
-        }]
+        }
 	}
 }
