@@ -2,10 +2,13 @@ body {
   font-family: "Old Standard TT", Georgia, "Times New Roman", serif;
   font-size: 16px; }
 
+.container {
+  border: 1px solid black; }
+
 #r-header-view {
   line-height: 1; }
   #r-header-view img {
-    border-radius: 50% 50%;
+    border-radius: 75px;
     padding: 15px 10px; }
   #r-header-view h1, #r-header-view h2 {
     padding: 0;
@@ -20,4 +23,5 @@ body {
   padding: 5px 8px; }
 
 .img-small {
-  width: 13%; }
+  width: 150px;
+  height: 150px; }
