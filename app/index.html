@@ -41,17 +41,38 @@
 		</script>
 		
 		<script id="r-qualifications" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-qualifications-view">
+			<section id="r-qual-view">
 				<h3 class="text-capitalize">{{this.title}}</h3>
 				<ul>
 					{{#each this.content}}
-					<li>{{this}}</li>
+					<li>{{this}}.</li>
 					{{/each}}
 				</ul>
 			</section>
 		</script>
 		
 		<script id="r-relevant-experience" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-relevant-exp-view">
+				<h3 class="text-capitalize">{{this.title}}</h3>
+				<table>
+					{{#each this.content}}
+					<tr>
+						<td>{{this.duration}}</td>
+						<th>{{this.position}}, {{this.company}}</th>
+						<td>{{this.location}}</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<ul>
+								{{#each this.highlights}}
+								<li>{{this}}</li>
+								{{/each}}
+							</ul>
+						</td>
+					</tr>
+					{{/each}}
+				</table>
+			</section>
 		</script>
 		
 		<script id="r-other-experience" class="r-templates" type="text/x-handlebars-template">
