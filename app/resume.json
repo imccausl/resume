@@ -25,14 +25,16 @@
             "highlights":[
                 "Helped to raise a client's overall grade from a D to a B+ through meticulous proof-reading, coaching, and feedback on university essay assignments",
                 "Provided accessible explanations, tailored to the experience of the client, on all aspects of essay writing: including grammar, tone, word-choice, and argument"
-            ]
+            ],
+            "relevant":true
         },
         {
             "duration":"05/2012-08/2012",
             "position":"Research Assistant",
             "company":"York University",
             "location":"Toronto, ON",
-            "highlights":[]
+            "highlights":[],
+            "relevant":true
         },
         {
             "duration":"05/2011-08/2011",
@@ -42,7 +44,8 @@
             "highlights":[
                 "Consulted online databases and search engines to create a comprehensive listing of primary sources",
                 "Analyzed and summarized source content, emphasizing relevant information in paragraph-length abstracts and organizing key details in Microsoft Excel for ease of reference"
-            ]
+            ],
+            "relevant":true
         },
         {
             "duration":"09/2010-04/2016",
@@ -52,7 +55,8 @@
             "highlights":[
                 "Facilitated Learning by editing and proof-reading student assignments, providing constructive feedback on argument, tone, word-choice, organization, etc",
                 "Researched and analyzed weekly course materials in order to develop engaging and accessible tutorial sessions for 20+ students from various academic backgrounds and experience levels"
-            ]
+            ],
+            "relevant":true
         },
         {
             "duration":"09/2010-04/2016",
@@ -62,14 +66,16 @@
             "highlights":[
                 "Published an extensive study on the use of Christianity in the film, Alien3, following up on a comprehensive body of primary and secondary source material",
                 "Presented in 5 professional academic conferences, delivering oral reports and presentations"
-            ]
+            ],
+            "relevant":true
         },
         {
             "duration":"09/2008-04/2010",
             "position":"Teaching Assistant",
             "company":"Western University",
             "location":"London, ON",
-            "highlights":[]
+            "highlights":[],
+            "relevant":true
         },
         {
             "duration":"07/2014-Present",
@@ -81,7 +87,8 @@
                 "Streamlined workflows to ensure a balanced daily workload",
                 "Worked to build employee morale and team spirit",
                 "Improved customer experience by focusing on speed of service"
-            ]
+            ],
+            "relevant":true
         }
     ],
     "volunteer experience":[
@@ -93,7 +100,8 @@
             "highlights":[
                 "Participated in the planning of the department's annual graduate student conference by writing and editing the Call for Papers and designing the conference poster",
                 "Served as a graduate student advocate, listening to student feedback about and voicing student interests in the Humanities department candidate-selection process"
-            ]
+            ],
+            "relevant":true
         },
         {
             "duration":"09/2012-04/2013",
@@ -104,7 +112,8 @@
                 "Collaborated with librarians to develop and implement questionnaires to understand the undergraduate user experience concerning the use of York's library resources",
                 "Analyzed research data to determine actionable improvements to the library user experience",
                 "Participated in A/B testing to determine user interface for the library's SPARK (Student Papers & Academic Research Kit) online platform"
-            ]
+            ],
+            "relevant":true
         },
         {
             "duration":"09/2008-09/2009",
@@ -114,7 +123,8 @@
             "highlights":[
                 "Designed conference posters, schedule pamphlet and website",
                 "Collaborated with sub-committee to organize conference schedule and determine presenters"
-            ]
+            ],
+            "relevant":true
         }
     ],
     "publications":[
