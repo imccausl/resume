@@ -15,9 +15,14 @@
 
 	<body>
 		<!-- Main Page -->
-		<div class="r-view">
-			<header id="r-header-view" class="container-fluid text-center"></header>
-		</div>
+		<div id="r-view" class="container">
+			<header id="r-header-view" class="text-center"></header>
+			<div class="row">
+				<div class="col-xs-12">
+					<section id="r-body-view" class="text-left"></section>
+				</div>
+			</div>
+		</div><!-- /r-view /container-fluid -->
 		<!-- ENDOF Main Page -->
 		
 		<!-- Templates -->
@@ -35,25 +40,33 @@
 			
 		</script>
 		
-		<script id="r-qualifications" type="text/x-handlebars-template">
+		<script id="r-qualifications" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-qualifications-view">
+				<h3 class="text-capitalize">{{this.title}}</h3>
+				<ul>
+					{{#each this.content}}
+					<li>{{this}}</li>
+					{{/each}}
+				</ul>
+			</section>
 		</script>
 		
-		<script id="r-relevant-experience" type="text/x-handlebars-template">
+		<script id="r-relevant-experience" class="r-templates" type="text/x-handlebars-template">
 		</script>
 		
-		<script id="r-other-experience" type="text/x-handlebars-template">
+		<script id="r-other-experience" class="r-templates" type="text/x-handlebars-template">
 		</script>
 		
-		<script id="r-volunteer-experience" type="text/x-handlebars-template">
+		<script id="r-volunteer-experience" class="r-templates" type="text/x-handlebars-template">
 		</script>
 		
-		<script id="r-education" type="text/x-handlebars-template">
+		<script id="r-education" class="r-templates" type="text/x-handlebars-template">
 		</script>
 		
-		<script id="r-technical-skills" type="text/x-handlebars-template">
+		<script id="r-technical-skills" class="r-templates" type="text/x-handlebars-template">
 		</script>
 		
-		<script id="r-publications" type="text/x-handlebars-template">
+		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
 		</script>
 	
 		<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
