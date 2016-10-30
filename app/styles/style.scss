@@ -3,9 +3,8 @@ body {
 	font-size: 16px;
 }
 
-.container {
-	border: 1px solid black;
-	border-radius: 0 10px;
+h2 {
+	font-weight: 700;
 }
 
 /* modular stylings */
@@ -48,5 +47,9 @@ body {
 			margin: 0;
 			padding: 0;
 		}
+	}
+	
+	table {
+		min-width: 100%;
 	}
 }
