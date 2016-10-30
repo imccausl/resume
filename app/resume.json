@@ -5,10 +5,15 @@
         "city":"Toronto",
         "province":"Ontario",
         "contact":{
-            "email":"imccausl@gmail.com",
-            "userName":"imccausl"
+            "email":"imccausl@gmail.com"
         },
-        "socialFeed":["twitter","linkedin","github","skype"]
+        "socialFeed":[
+        	{"service":"medium","url":"https://medium.com/modern-mythologies"},
+        	{"service":"twitter","url":"http://www.twitter.com/imccausl"},
+        	{"service":"linkedin","url":"https://ca.linkedin.com/in/ian-mccausland-97499040"},
+        	{"service":"github","url":"http://www.github.com/imccausl"},
+        	{"service":"skype","url":"skype:imccausl"}
+        ]
     },
     "summary of qualifications":[
         "Advanced knowledge of HTML5, CSS3, and JavaScript",
