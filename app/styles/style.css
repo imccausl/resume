@@ -1,2 +1,23 @@
 body {
-  font-family: "Old Standard TT", Georgia, "Times New Roman", serif; }
+  font-family: "Old Standard TT", Georgia, "Times New Roman", serif;
+  font-size: 16px; }
+
+#r-header-view {
+  line-height: 1; }
+  #r-header-view img {
+    border-radius: 50% 50%;
+    padding: 15px 10px; }
+  #r-header-view h1, #r-header-view h2 {
+    padding: 0;
+    margin: 0; }
+  #r-header-view #r-connect {
+    font-family: "Raleway", "Helvetica", sans-serif;
+    margin: 10px;
+    letter-spacing: 0.5px; }
+
+#r-connect .r-social {
+  display: inline-block;
+  padding: 5px 8px; }
+
+.img-small {
+  width: 13%; }
