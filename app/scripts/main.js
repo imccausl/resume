@@ -3,6 +3,7 @@
 		resume: {},
 		header: {},
 		templates: [],
+		sectionHeaders: '<h3 class="text-capitalize">{{this.title}}</h3>',
 		
 		// methods
 		get: function(path) {
@@ -48,15 +49,12 @@
 		init: function() {
 			// compile the handlebars templates
 			console.log("Initializing the view!");
-						
+			
+			// register resusable section header partial
+			Handlebars.registerPartial('sectionHeader', model.sectionHeaders);	
+			
 			app.getTemplateHTML();
-			app.buildHeader(model.resume.info);
-			view.render()
-			
-		},
-		
-		render: function() {
-			
+			app.buildHeader(model.resume.info);			
 		}
 	};
 	
@@ -67,7 +65,6 @@
 			.then(function(response) {
 				// load was successful. Parse the JSON data
 				model.resume = JSON.parse(response);
-				console.log(model.resume);
 			}).then(function(response) {
 				// parsing was successful start initializing the view
 				view.init();
@@ -89,9 +86,10 @@
 		
 		buildResume: function() {
 			var resumeKeys = Object.keys(model.resume);
-			var dataIndex = 1;
+			var dataIndex = 1, sectionHeader;
 			
 			for(var i=0; i<model.templates.length; i++) {
+				console.log(model.resume[resumeKeys[dataIndex]]);
 				$('#r-body-view').append(model.templates[i](model.resume[resumeKeys[dataIndex]]));
 				dataIndex++;
 			}
