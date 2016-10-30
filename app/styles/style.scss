@@ -5,8 +5,16 @@ body {
 
 .container {
 	border: 1px solid black;
+	border-radius: 0 10px;
 }
 
+/* modular stylings */
+.img-small {
+	width: 150px;
+	height: 150px;
+}
+
+/* layout stylings */
 #r-header-view {
 	line-height: 1;
 	
@@ -25,18 +33,20 @@ body {
 		
 		margin: 10px;
 		letter-spacing: 0.5px;
+		
+		.r-social {
+			display: inline-block;
+			padding: 5px 8px;
+		}
 	}
 	
 }
 
-#r-connect {
-	.r-social {
-		display: inline-block;
-		padding: 5px 8px;
+#r-body-view {
+	#r-technical-skills-view {
+		p {
+			margin: 0;
+			padding: 0;
+		}
 	}
-}
-
-.img-small {
-	width: 150px;
-	height: 150px;
 }
