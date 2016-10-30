@@ -2,9 +2,8 @@ body {
   font-family: "Old Standard TT", Georgia, "Times New Roman", serif;
   font-size: 16px; }
 
-.container {
-  border: 1px solid black;
-  border-radius: 0 10px; }
+h2 {
+  font-weight: 700; }
 
 /* modular stylings */
 .img-small {
@@ -31,3 +30,6 @@ body {
 #r-body-view #r-technical-skills-view p {
   margin: 0;
   padding: 0; }
+
+#r-body-view table {
+  min-width: 100%; }
