@@ -5,28 +5,56 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- Framework stylesheets / Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|Roboto+Mono:400|Raleway:400" rel="stylesheet">
 		<!-- Custom stylesheets -->
 		<link rel="stylesheet" href="styles/main.css">
 		<link rel="stylesheet" href="styles/style.css">
 		
-		<title>Document</title>
+		<title>Ian R. McCausland | Web Developer | Resume</title>
 	</head>
 
 	<body>
 		<!-- Main Page -->
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-12">
-					<h1>Ian McCausland</h1>
-					<h2>Resume</h2>
-				</div>
-			</div>
+		<div class="r-view">
+			<header id="r-header-view" class="container-fluid text-center"></header>
 		</div>
-		
 		<!-- ENDOF Main Page -->
 		
 		<!-- Templates -->
+		<script id="r-header" type="text/x-handlebars-template">
+			<img class="img-small" src="{{img}}" alt="biographical image">
+						
+			<h1>{{fullName}}</h1>
+			<h2>{{city}}, {{province}}</h2>
+			
+			<div id="r-connect" class="btn btn-info">
+				{{#each socialFeed}}
+				<a href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
+				{{/each}}
+			</div>
+			
+		</script>
+		
+		<script id="r-qualifications" type="text/x-handlebars-template">
+		</script>
+		
+		<script id="r-relevant-experience" type="text/x-handlebars-template">
+		</script>
+		
+		<script id="r-other-experience" type="text/x-handlebars-template">
+		</script>
+		
+		<script id="r-volunteer-experience" type="text/x-handlebars-template">
+		</script>
+		
+		<script id="r-education" type="text/x-handlebars-template">
+		</script>
+		
+		<script id="r-technical-skills" type="text/x-handlebars-template">
+		</script>
+		
+		<script id="r-publications" type="text/x-handlebars-template">
+		</script>
 	
 		<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
 		<!-- bower:js -->
