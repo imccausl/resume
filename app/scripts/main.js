@@ -26,15 +26,11 @@
 		}
 	};
 	
-	function getJSON(data) {
-		return JSON.parse(data);
-	}
-	
 	var app = { 
 		init: function() { 
 			model.get("./resume.json")
 			.then(function(response) {
-				model.resume = getJSON(response);
+				model.resume = JSON.parse(response);
 				console.log(model.resume);
 			})
 			.catch(function(status) {
