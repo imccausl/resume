@@ -42,7 +42,7 @@
 		
 		<script id="r-qualifications" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-qual-view">
-				<h3 class="text-capitalize">{{this.title}}</h3>
+				{{> sectionHeader}}
 				<ul>
 					{{#each this.content}}
 					<li>{{this}}.</li>
@@ -51,9 +51,9 @@
 			</section>
 		</script>
 		
-		<script id="r-relevant-experience" class="r-templates" type="text/x-handlebars-template">
+		<script id="r-experience" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-relevant-exp-view">
-				<h3 class="text-capitalize">{{this.title}}</h3>
+				{{> sectionHeader}}
 				<table>
 					{{#each this.content}}
 					<tr>
@@ -65,7 +65,7 @@
 						<td colspan="3">
 							<ul>
 								{{#each this.highlights}}
-								<li>{{this}}</li>
+								<li>{{this}}.</li>
 								{{/each}}
 							</ul>
 						</td>
@@ -75,20 +75,42 @@
 			</section>
 		</script>
 		
-		<script id="r-other-experience" class="r-templates" type="text/x-handlebars-template">
-		</script>
-		
-		<script id="r-volunteer-experience" class="r-templates" type="text/x-handlebars-template">
+		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
+			{{> sectionHeader}}
 		</script>
 		
 		<script id="r-education" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-education-view">
+				{{> sectionHeader}}
+				<table>
+					{{#each this.content}}
+					<tr>
+						<td>{{this.year}}</td>
+						<td>{{this.degree}}, <strong>{{this.program}}</strong>, {{this.institution}}, {{this.location}} {{#unless this.completed}}({{this.notes}}){{/unless}}</td>
+					</tr>
+					
+					{{#each this.awards}}
+					{{#if this}}
+					<tr>
+						<td></td>
+						<td><em>Awarded a {{this}}</em></td>
+					</tr>
+					{{/if}}
+					{{/each}}
+					{{/each}}
+				</table>
+			</section>
 		</script>
 		
 		<script id="r-technical-skills" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-technical-skills-view">
+				{{> sectionHeader}}
+				{{#each this.content}}
+				<p><strong class="text-capitalize">{{@key}}</strong>: {{this}}</p>
+				{{/each}}
+			</section>
 		</script>
 		
-		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
-		</script>
 	
 		<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
 		<!-- bower:js -->
