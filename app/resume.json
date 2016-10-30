@@ -15,12 +15,15 @@
         	{"service":"skype","url":"skype:imccausl"}
         ]
     },
-    "summary of qualifications":[
+    "qualifications":{
+	    "title":"Summary of Qualifications",
+	    "content":[
         "Advanced knowledge of HTML5, CSS3, and JavaScript",
         "Ability to address content to audiences of various skill levels and backgrounds",
         "Adept at analyzing complex problems and breaking them down into components",
         "Experienced in adhering to format, content, and style guidelines"
-    ],
+		]
+	},
     "professional experience":[
         {
             "duration":"06/2012-Present",
