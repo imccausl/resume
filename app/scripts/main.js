@@ -2,7 +2,6 @@
 	var model = {
 		resume: {},
 		header: {},
-		qualifications: {},
 		templates: [],
 		
 		// methods
@@ -88,10 +87,14 @@
 			$('#r-header-view').html(model.header)
 		},
 		
-		buildResume: function(resumeData) {
-			var source = model.templates[0](resumeData)
+		buildResume: function() {
+			var resumeKeys = Object.keys(model.resume);
+			var dataIndex = 1;
 			
-			$('#r-body-view').html(source);	
+			for(var i=0; i<model.templates.length; i++) {
+				$('#r-body-view').append(model.templates[i](model.resume[resumeKeys[dataIndex]]));
+				dataIndex++;
+			}
 		},
 		
 		compileTemplate: function(templateHTML) {
@@ -113,8 +116,7 @@
 				model.templates.push(this.compileTemplate(templateLoc[i]));	
 			}
 			
-			app.buildResume(model.resume.qualifications);
-			console.log(model.templates);	
+			app.buildResume();
 		}
 	};
 	
