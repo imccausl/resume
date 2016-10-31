@@ -29,7 +29,8 @@
 	    "content":
 	    
 	    [{
-            "duration":"06/2012-Present",
+            "start":"06/2012",
+            "end":"Present",
             "position":"Freelance Writing Tutor",
             "company":"Self-Employed",
             "location":"Toronto, ON",
@@ -39,7 +40,8 @@
         "relevant":true
         },
         {
-            "duration":"05/2012-08/2012",
+            "start":"05/2012",
+            "end":"08/2012",
             "position":"Research Assistant",
             "company":"York University",
             "location":"Toronto, ON",
@@ -47,7 +49,7 @@
             "relevant":true
         },
         {
-            "duration":"05/2011-08/2011",
+            "start":"05/2011","end":"08/2011",
             "position":"Research Assistant",
             "company":"York University",
             "location":"Toronto, ON",
@@ -58,7 +60,7 @@
             "relevant":true
         },
         {
-            "duration":"09/2010-04/2016",
+            "start":"09/2010","end":"04/2016",
             "position":"Teaching Assistant",
             "company":"York University",
             "location":"Toronto, ON",
@@ -69,7 +71,7 @@
             "relevant":true
         },
         {
-            "duration":"09/2010-04/2016",
+            "start":"09/2010","end":"04/2016",
             "position":"PhD Student",
             "company":"York University",
             "location":"Toronto, ON",
@@ -80,7 +82,7 @@
             "relevant":true
         },
         {
-            "duration":"09/2008-04/2010",
+            "start":"09/2008","end":"04/2010",
             "position":"Teaching Assistant",
             "company":"Western University",
             "location":"London, ON",
@@ -88,7 +90,7 @@
             "relevant":true
         },
         {
-            "duration":"07/2014-Present",
+            "start":"07/2014","end":"Present",
             "position":"Shift Supervisor",
             "company":"Starbucks",
             "location":"Toronto, ON",
@@ -105,7 +107,7 @@
 	    "title":"Volunteer Experience",
 	    "content":[
         {
-            "duration":"09/2011-09/2013",
+            "start":"09/2011","end":"09/2013",
             "position":"Humanities Graduate Student Association",
             "company":"York University",
             "location":"Toronto, ON",
@@ -115,7 +117,7 @@
             "relevant":true
         },
         {
-            "duration":"09/2012-04/2013",
+            "start":"09/2012","end":"04/2013",
             "position":"Library Student Advisory Committee",
             "company":"York University",
             "location":"Toronto, ON",
@@ -126,7 +128,7 @@
             "relevant":true
         },
         {
-            "duration":"09/2008-09/2009",
+            "start":"09/2008","end":"09/2009",
             "position":"Graduate Student Conference Committee",
             "company":"Western University",
             "location":"London, ON",
@@ -141,8 +143,8 @@
 	    "title":"Publications",
 	    "content":[
         {
-            "title":"‘Stasis Interrupted’ Christianity and Subjectivity in David Fincher's Alien3",
-            "citation":"God and Popular Culture: A Behind-the-Scenes Look at the Entertainment Industry's Most Influential Figure. Stephen Butler Murray and Aimée Upjohn Light, Eds. Santa Barbara: Praeger, 2015. pp. 115-141"
+            "title":"‘Stasis Interrupted’ Christianity and Subjectivity in David Fincher's <em>Alien<sup>3</sup></em>",
+            "citation":"<em>God and Popular Culture: A Behind-the-Scenes Look at the Entertainment Industry's Most Influential Figure</em>. Stephen Butler Murray and Aimée Upjohn Light, Eds. Santa Barbara: Praeger, 2015. pp. 115-141"
         }]
     },
     "education":{
