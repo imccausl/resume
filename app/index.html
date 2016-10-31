@@ -57,7 +57,7 @@
 				<table>
 					{{#each this.content}}
 					<tr>
-						<td>{{this.duration}}</td>
+						<td>{{this.start}}-{{this.end}}</td>
 						<th>{{this.position}}, {{this.company}}</th>
 						<td>{{this.location}}</td>
 					</tr>
@@ -76,7 +76,16 @@
 		</script>
 		
 		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
-			{{> sectionHeader}}
+			<section id="r-publications-view">
+				{{> sectionHeader}}
+				<table>
+					<tbody>
+						{{#each this.content}}
+						<tr><td>&ldquo;{{{this.title}}}&rdquo; in {{{this.citation}}}</td></tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</section>
 		</script>
 		
 		<script id="r-education" class="r-templates" type="text/x-handlebars-template">
