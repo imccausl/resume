@@ -9,7 +9,7 @@
 		get: function(path) {
 			return new Promise(function(resolve, reject) {
 			var req = new XMLHttpRequest();
-			req.open("GET", path);
+			req.open('GET', path);
 			req.onload = function() {
 				if (req.status === 200) {
 					// it worked
@@ -22,7 +22,7 @@
 		
 			req.onerror = function() {
 				// it failed with a network error
-				reject("Network error");
+				reject('Network error');
 			};
 		
 			req.send();
@@ -36,7 +36,7 @@
 			var expTemplatePartial;
 			
 			// compile the handlebars templates
-			console.log("Initializing the view!");
+			console.log('Initializing the view!');
 			
 			model.resume.professionalExperience.content = view.sortData(model.resume.professionalExperience.content, 'start');	
 						
@@ -65,7 +65,7 @@
 	var app = { 
 		init: function() { 
 			// load the JSON data for the resume
-			model.get("./resume.json")
+			model.get('./resume.json')
 			.then(function(response) {
 				// load was successful. Parse the JSON data
 				model.resume = JSON.parse(response);
