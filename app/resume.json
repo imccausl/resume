@@ -158,7 +158,8 @@
             "location":"Toronto, ON",
             "awards":[""],
             "completed":false,
-            "notes":"In progress"
+            "notes":"In progress",
+            "courses":[""]
 		},
 		{
 			"institution":"Udacity",
@@ -168,7 +169,8 @@
             "location":"Toronto, ON",
             "awards":[""],
             "completed":false,
-            "notes":"In progress"
+            "notes":"In progress",
+            "courses":[""]
 		},
         {
             "institution":"York University",
@@ -178,7 +180,8 @@
             "location":"Toronto, ON",
             "awards":[""],
             "completed":false,
-            "notes":"Partially completed"
+            "notes":"Partially completed",
+            "courses":[""]
         },
         {
             "institution":"Western University",
@@ -188,7 +191,8 @@
             "location":"London, ON",
             "awards":["Western Graduate Research Scholarship, 2008-2010",""],
             "completed":true,
-            "notes":""
+            "notes":"",
+            "courses":[""]
         },
         {
             "institution":"University of Calgary",
@@ -198,7 +202,8 @@
             "location":"Calgary, AB",
             "awards":["Jason Lang Scholarship for Academic Achievement, 2006",""],
             "completed":true,
-            "notes":""
+            "notes":"",
+            "courses":[""]
         }]
     },
     "technicalSkills":{
