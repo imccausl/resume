@@ -50,7 +50,8 @@
 			// compile the handlebars templates
 			console.log("Initializing the view!");
 			
-			model.resume.professionalExperience.content = view.sortExperience();				
+			model.resume.professionalExperience.content = view.sortData(model.resume.professionalExperience.content, 'start');	
+						
 			// register resusable section header partial
 			Handlebars.registerPartial('sectionHeader', model.sectionHeaders);	
 			
@@ -58,12 +59,12 @@
 			app.buildHeader(model.resume.info);	//builds the site header		
 		},
 		
-		sortExperience: function() {
+		sortData: function(source, sortBy) {
 			// sort experience by most recent to least recent employment
 
-			return model.resume.professionalExperience.content.sort(function(a, b) {
-				console.log(a.start.substr(3), b.start.substr(3));
-				return b.start.substr(3) - a.start.substr(3);
+			return source.sort(function(a, b) {
+				console.log(a[sortBy].substr(3), b[sortBy].substr(3));
+				return b[sortBy].substr(3) - a[sortBy].substr(3);
 			});
 		}
 	};
@@ -128,5 +129,6 @@
 		}
 	};
 	
+	//start it up!
 	app.init();
 })(document);
