@@ -7,20 +7,21 @@ h3 {
 
 /* modular stylings */
 .img-small {
-  width: 150px;
-  height: 150px; }
+  width: 250px;
+  height: 250px; }
 
 /* layout stylings */
 #r-header-view {
   line-height: 1; }
   #r-header-view img {
-    border-radius: 75px;
+    border-radius: 125px;
     padding: 15px 10px; }
   #r-header-view h1, #r-header-view h2 {
     padding: 0;
     margin: 0; }
   #r-header-view #r-connect {
     font-family: "Raleway", "Helvetica", sans-serif;
+    cursor: default;
     margin: 10px;
     letter-spacing: 0.5px; }
     #r-header-view #r-connect .r-social {
