@@ -3,7 +3,7 @@
 		resume: {},
 		header: {},
 		templates: [],
-		sectionHeaders: '<h3 class="text-capitalize">{{this.title}}</h3>',
+		sectionHeaders: '<h3 class="text-capitalize">{{modifyHeader}}{{this.title}}</h3>',
 		
 		// methods
 		get: function(path) {
@@ -28,25 +28,13 @@
 			req.send();
 		});
 
-		},
-		
-		/* getRelevantExperience() function
-		 ----------------------------------
-		 * The resume.json data file has a boolean attribute for each experience instance to determine whether
-		 * it will be showcased in the "relevant" section or relegated to the "other", further down, below. This
-		 * function filters through all the experience entries (including volunteer experience) in order to build
-		 * the data for the "relevant experience" section.
-		 *
-		 * I've put this method in the "model" object because its purpose is to create a set of data that will be  
-		 * subsequently used by the app.
-		 ******************************************************************************************************/
-		getRelevantExperience: function() {
-			
 		}
 	};
 	
 	var view = {
 		init: function() {
+			var expTemplatePartial;
+			
 			// compile the handlebars templates
 			console.log("Initializing the view!");
 			
@@ -54,6 +42,11 @@
 						
 			// register resusable section header partial
 			Handlebars.registerPartial('sectionHeader', model.sectionHeaders);	
+			
+			//register reusable experience section partial
+			//to use with both relevant and other professional experience sections
+			expTemplatePartial = $('#r-experience-partial').html()
+			Handlebars.registerPartial('experiencePartial', expTemplatePartial);
 			
 			app.getTemplateHTML();
 			app.buildHeader(model.resume.info);	//builds the site header		
