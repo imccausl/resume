@@ -48,6 +48,7 @@ gulp.task('lint', () => {
   })
     .pipe(gulp.dest('app/scripts'));
 });
+
 gulp.task('lint:test', () => {
   return lint('test/spec/**/*.js', {
     fix: true,
@@ -61,9 +62,9 @@ gulp.task('lint:test', () => {
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    //.pipe($.if('*.js', $.uglify()))
+    //.pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
+    //.pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -149,7 +150,8 @@ gulp.task('serve:test', ['scripts'], () => {
 gulp.task('deploy', function() {
 	return gulp.src('./dist/**/*')
 		.pipe($.ghPages({
-			branch: "master"
+			branch: "master",
+			remoteUrl: "https://github.com/imccausl/resume.git"
 		}));
 });
 
@@ -170,7 +172,7 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+  return gulp.src('./dist/**/*').pipe($.size({title: 'build', gzip: false}));
 });
 
 gulp.task('default', () => {
