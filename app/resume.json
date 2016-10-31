@@ -150,6 +150,26 @@
     "education":{
 	    "title":"Education",
 	    "content":[
+		{
+			"institution":"Udacity",
+            "degree":"Nanodegree",
+            "program":"Senior Front-end Web Developer",
+            "year":"2016",
+            "location":"Toronto, ON",
+            "awards":[""],
+            "completed":false,
+            "notes":"In progress"
+		},
+		{
+			"institution":"Udacity",
+            "degree":"Nanodegree",
+            "program":"Front-end Web Developer",
+            "year":"2016",
+            "location":"Toronto, ON",
+            "awards":[""],
+            "completed":false,
+            "notes":"In progress"
+		},
         {
             "institution":"York University",
             "degree":"PhD",
