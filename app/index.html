@@ -53,23 +53,21 @@
 		
 		<script id="r-experience" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-relevant-exp-view">
-				{{> sectionHeader}}
+				{{> sectionHeader modifyHeader="Relevant "}}
 				<table>
 					{{#each this.content}}
-					<tr>
-						<td>{{this.start}}-{{this.end}}</td>
-						<th>{{this.position}}, {{this.company}}</th>
-						<td>{{this.location}}</td>
-					</tr>
-					<tr>
-						<td colspan="3">
-							<ul>
-								{{#each this.highlights}}
-								<li>{{this}}.</li>
-								{{/each}}
-							</ul>
-						</td>
-					</tr>
+					{{#if this.relevant}}
+						{{> experiencePartial}}
+					{{/if}}
+					{{/each}}
+				</table>
+				
+				{{> sectionHeader modifyHeader="Other "}}
+				<table>
+					{{#each this.content}}
+					{{#unless this.relevant}}
+						{{> experiencePartial}}
+					{{/unless}}
 					{{/each}}
 				</table>
 			</section>
@@ -118,6 +116,23 @@
 				<p><strong class="text-capitalize">{{@key}}</strong>: {{this}}</p>
 				{{/each}}
 			</section>
+		</script>
+		
+		<script id="r-experience-partial" type="text/x-handlebars-template">
+			<tr>
+						<td>{{this.start}}-{{this.end}}</td>
+						<th>{{this.position}}, {{this.company}}</th>
+						<td>{{this.location}}</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<ul>
+								{{#each this.highlights}}
+								<li>{{this}}.</li>
+								{{/each}}
+							</ul>
+						</td>
+					</tr>
 		</script>
 		
 	
