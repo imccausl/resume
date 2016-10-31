@@ -5,7 +5,6 @@ const browserSync = require('browser-sync');
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
-const ghPages = require('gulp-gh-pages');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -149,7 +148,7 @@ gulp.task('serve:test', ['scripts'], () => {
 
 gulp.task('deploy', function() {
 	return gulp.src('./dist/**/*')
-		.pipe(ghPages({
+		.pipe($.ghPages({
 			branch: "master"
 		}));
 });
