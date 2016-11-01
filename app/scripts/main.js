@@ -100,6 +100,10 @@
 				dataIndex++;
 			}
 		},
+		
+		buildNavigation: function() {
+			
+		},
 
 		compileTemplate: function compileTemplate(templateHTML) {
 			return Handlebars.compile(templateHTML.innerHTML);
