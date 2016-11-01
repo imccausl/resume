@@ -10,10 +10,7 @@
 		<!-- endbower -->
 		
 		<!-- Custom stylesheets -->
-		<!-- build:css styles/main.css -->
 		<link rel="stylesheet" href="styles/main.css">
-		<link rel="stylesheet" href="styles/style.css">
-		<!-- endbuild -->
 		
 		<title>Ian R. McCausland | Web Developer | Resume</title>
 	</head>
@@ -74,6 +71,17 @@
 					{{#unless this.relevant}}
 						{{> experiencePartial}}
 					{{/unless}}
+					{{/each}}
+				</table>
+			</section>
+		</script>
+		
+		<script id="r-volunteer" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-volunteer-exp-view">
+				{{> sectionHeader}}
+				<table>
+					{{#each this.content}}
+						{{> experiencePartial}}
 					{{/each}}
 				</table>
 			</section>
@@ -143,13 +151,7 @@
 		
 	
 		<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
-		<!-- build:js scripts/libraries.js -->
-		<!-- bower:js -->
-		<script src="/bower_components/jquery/dist/jquery.js"></script>
-		<script src="/bower_components/modernizr/modernizr.js"></script>
-		<script src="/bower_components/handlebars/handlebars.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
+		<script src="scripts/libraries.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>
