@@ -1,6 +1,7 @@
 body {
   font-family: "Old Standard TT", Georgia, "Times New Roman", serif;
-  font-size: 16px; }
+  font-size: 16px;
+  z-index: 5; }
 
 h3 {
   font-weight: 700; }
@@ -10,11 +11,15 @@ h3 {
   width: 250px;
   height: 250px; }
 
+.show {
+  display: block; }
+
 /* layout stylings */
 #r-header-view {
+  position: relative;
   line-height: 1; }
   #r-header-view img {
-    border-radius: 125px;
+    border-radius: 50%;
     padding: 15px 10px; }
   #r-header-view h1, #r-header-view h2 {
     padding: 0;
@@ -34,3 +39,35 @@ h3 {
 
 #r-body-view table {
   min-width: 100%; }
+
+.r-nav {
+  position: absolute;
+  top: 0;
+  right: 10px; }
+  .r-nav #r-nav-menu {
+    display: block;
+    border: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 15px 10px; }
+  .r-nav #r-nav-menu:link {
+    color: black; }
+  .r-nav #r-nav-menu:hover {
+    color: #265180; }
+  .r-nav #r-jump-menu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    box-shadow: 0px 0px 43px 1px rgba(225, 225, 225, 0.73);
+    width: 310px;
+    top: 1px;
+    right: 10px;
+    margin: 10px; }
+    .r-nav #r-jump-menu #r-jump-menu-items {
+      padding: 10px;
+      list-style-type: none; }
