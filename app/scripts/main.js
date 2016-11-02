@@ -73,6 +73,10 @@
 				model.resume = JSON.parse(response);
 			}).then(function (response) {
 				// since parsing was successful, start initializing the view
+				
+				//FOR TESTING PURPOSES
+				buildMenu(extractMenu(model.resume));
+				
 				view.init();
 			}).catch(function (status) {
 				console.log(status); // something went wrong, log it to the console for now.
@@ -86,7 +90,7 @@
 			template = Handlebars.compile(source);
 			model.header = template(headerData);
 
-			$('#r-header-view').html(model.header);
+			$('#r-header-view').append(model.header);
 		},
 
 		buildResume: function buildResume() {
@@ -126,6 +130,34 @@
 		}
 	};
 
+	/* temporary placement of test items for resume navigation */
+	
+	// menu builder
+	function extractMenu(dataSet) {
+		var menuArray = [], key = "";
+		
+		for(key in dataSet) {
+			if(dataSet[key].title) {
+				menuArray.push(dataSet[key].title);
+			}
+		}
+		
+		return menuArray;
+	}
+	
+	function buildMenu(items) {
+		for(var i=0; i < items.length; i++){
+			$('#r-jump-menu-items').append('<li><h4>' + items[i] + '</h4></li>');
+		}
+	}
+	
+	// click listener
+	$('#r-nav-menu').on('click', function(){
+		$('#r-jump-menu').toggle('.show');	
+	});
+	
+	/* END temporary placement */
+	
 	//start it up!
 	app.init();
 })(document);
