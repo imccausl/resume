@@ -151,7 +151,7 @@ gulp.task('deploy', function() {
 	return gulp.src('./dist/**/*')
 		.pipe($.ghPages({
 			branch: "master",
-			message: "Latest production build: [timestamp]",
+			message: "Latest production build",
 			remoteUrl: "https://github.com/imccausl/resume.git"
 		}));
 });
