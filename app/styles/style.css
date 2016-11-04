@@ -34,3 +34,6 @@ h3 {
 
 #r-body-view table {
   min-width: 100%; }
+
+#r-body-view ul {
+  padding-left: 18px; }
