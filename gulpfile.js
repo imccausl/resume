@@ -150,7 +150,7 @@ gulp.task('serve:test', ['scripts'], () => {
 gulp.task('deploy', function() {
 	return gulp.src('./dist/**/*')
 		.pipe($.ghPages({
-			branch: "master",
+			branch: "production",
 			message: "Latest production build",
 			remoteUrl: "https://github.com/imccausl/resume.git"
 		}));
