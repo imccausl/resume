@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Framework stylesheets / Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|Roboto+Mono:400|Raleway:400" rel="stylesheet">
+		<link rel="stylesheet" href="styles/main.css">
+		
+		<title>Ian R. McCausland | Web Developer | Resume</title>
+	</head>
+
+	<body>
+		<!-- Main Page -->
+		<div id="r-view" class="container">
+			<header id="r-header-view" class="text-center"></header>
+			<div class="row">
+				<div class="col-xs-12">
+					<section id="r-body-view" class="text-left"></section>
+				</div>
+			</div>
+		</div><!-- /r-view /container-fluid -->
+		<!-- ENDOF Main Page -->
+		
+		<!-- Templates -->
+		<script id="r-header" type="text/x-handlebars-template">
+			<img class="img-small" src="{{img}}" alt="biographical image">
+						
+			<h1>{{fullName}}</h1>
+			<h2 class="text-capitalize">{{description}}</h2>
+			<h2 class="text-capitalize">{{city}}, {{province}}</h2>
+			
+			<div id="r-connect" class="btn btn-info">
+				{{#each socialFeed}}
+				<a href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
+				{{/each}}
+			</div>
+			
+		</script>
+		
+		<script id="r-qualifications" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-qual-view">
+				{{> sectionHeader}}
+				<ul>
+					{{#each this.content}}
+					<li>{{this}}.</li>
+					{{/each}}
+				</ul>
+			</section>
+		</script>
+		
+		<script id="r-experience" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-relevant-exp-view">
+				<table>
+					<thead>
+					{{> sectionHeader modifyHeader="Relevant "}}
+					</thead>
+					
+					<tbody>
+					{{#each this.content}}
+					{{#if this.relevant}}
+						{{> experiencePartial}}
+					{{/if}}
+					{{/each}}
+					</tbody>
+				</table>
+			</section>
+			
+			<section id="r-other-exp-view">
+				<table>
+					<thead>
+					{{> sectionHeader modifyHeader="Other "}}
+					</thead>
+					
+					<tbody>
+					{{#each this.content}}
+					{{#unless this.relevant}}
+						{{> experiencePartial}}
+					{{/unless}}
+					{{/each}}
+					</tbody>
+				</table>
+			</section>
+		</script>
+		
+		<script id="r-volunteer" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-volunteer-exp-view">
+				{{> sectionHeader}}
+				<table>
+					{{#each this.content}}
+						{{> experiencePartial}}
+					{{/each}}
+				</table>
+			</section>
+		</script>
+		
+		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-publications-view">
+				{{> sectionHeader}}
+				<table>
+					<tbody>
+						{{#each this.content}}
+						<tr><td>&ldquo;{{{this.title}}}&rdquo; in {{{this.citation}}}</td></tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</section>
+		</script>
+		
+		<script id="r-education" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-education-view">
+				{{> sectionHeader}}
+				<table>
+					{{#each this.content}}
+					<tr>
+						<td style="width:15%;">{{this.year}}</td>
+						<td style="width:85%;">{{this.degree}},
+						<strong> {{this.program}}</strong>,
+						{{this.institution}}, {{this.location}} {{#unless this.completed}}({{this.notes}}){{/unless}}</td>
+					</tr>
+					
+					{{#each this.awards}}
+					{{#if this}}
+					<tr>
+						<td></td>	
+						<ul>
+							<td><li><em>Awarded a {{this}}</em></li></td>
+						</ul>
+					</tr>
+					{{/if}}
+					{{/each}}
+					{{/each}}
+				</table>
+			</section>
+		</script>
+		
+		<script id="r-technical-skills" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-technical-skills-view">
+				{{> sectionHeader}}
+				{{#each this.content}}
+				<p><strong class="text-capitalize">{{@key}}</strong>: {{this}}</p>
+				{{/each}}
+			</section>
+		</script>
+		
+		<script id="r-experience-partial" type="text/x-handlebars-template">
+			<tr>
+						<td style="width:20%;">{{this.start}}-{{this.end}}</td>
+						<th style="width:65%;">{{this.position}}, {{this.company}}</th>
+						<td style="width:15%;">{{this.location}}</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<ul>
+								{{#each this.highlights}}
+								<li>{{this}}.</li>
+								{{/each}}
+							</ul>
+						</td>
+					</tr>
+		</script>
+		
+	
+		<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
+		<script src="scripts/libraries.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>
