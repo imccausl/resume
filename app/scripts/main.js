@@ -6,7 +6,11 @@
 		header: {},
 		templates: [],
 		sectionHeaders: '<h3 class="text-capitalize">{{modifyHeader}}{{this.title}}</h3>',
-
+		navMenu: {
+			open: 'fa-chevron-left',
+			close: 'fa-close'
+		},
+		
 		// methods
 		get: function get(path) {
 			return new Promise(function (resolve, reject) {
@@ -59,7 +63,6 @@
 			// sort experience by most recent to least recent employment
 
 			return source.sort(function (a, b) {
-				console.log(a[sortBy].substr(3), b[sortBy].substr(3));
 				return b[sortBy].substr(3) - a[sortBy].substr(3);
 			});
 		}
@@ -99,7 +102,6 @@
 			    sectionHeader;
 
 			for (var i = 0; i < model.templates.length; i++) {
-				console.log(model.resume[resumeKeys[dataIndex]]);
 				$('#r-body-view').append(model.templates[i](model.resume[resumeKeys[dataIndex]]));
 				dataIndex++;
 			}
@@ -147,13 +149,21 @@
 	
 	function buildMenu(items) {
 		for(var i=0; i < items.length; i++){
-			$('#r-jump-menu-items').append('<li><h4>' + items[i] + '</h4></li>');
+			$('#r-jump-menu-items').append('<li><h3>' + items[i] + '.</h3></li>');
 		}
 	}
 	
 	// click listener
-	$('#r-nav-menu').on('click', function(){
-		$('#r-jump-menu').toggle('.show');	
+	$('#r-nav-menu').on('click', function() {
+		$('#r-jump-menu').toggle('.show');
+				
+		if ( $('#r-nav-icon').hasClass(model.navMenu.open) ) {
+			$('#r-nav-icon').removeClass(model.navMenu.open);
+			$('#r-nav-icon').addClass(model.navMenu.close);
+		} else { 
+			$('#r-nav-icon').removeClass(model.navMenu.close);
+			$('#r-nav-icon').addClass(model.navMenu.open);
+		}
 	});
 	
 	/* END temporary placement */
