@@ -59,22 +59,30 @@
 		
 		<script id="r-experience" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-relevant-exp-view">
-				{{> sectionHeader modifyHeader="Relevant "}}
 				<table>
+					<thead>
+					{{> sectionHeader modifyHeader="Relevant "}}
+					</thead>
+					
+					<tbody>
 					{{#each this.content}}
 					{{#if this.relevant}}
 						{{> experiencePartial}}
 					{{/if}}
 					{{/each}}
-				</table>
+					</tbody>
 				
-				{{> sectionHeader modifyHeader="Other "}}
-				<table>
+					<thead>
+					{{> sectionHeader modifyHeader="Other "}}
+					</thead>
+					
+					<tbody>
 					{{#each this.content}}
 					{{#unless this.relevant}}
 						{{> experiencePartial}}
 					{{/unless}}
 					{{/each}}
+					</tbody>
 				</table>
 			</section>
 		</script>
