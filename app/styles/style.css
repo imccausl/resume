@@ -1,6 +1,7 @@
 body {
   font-family: "Old Standard TT", Georgia, "Times New Roman", serif;
-  font-size: 16px; }
+  font-size: 16px;
+  z-index: 10; }
 
 h3 {
   font-weight: 700; }
@@ -12,9 +13,10 @@ h3 {
 
 /* layout stylings */
 #r-header-view {
+  position: relative;
   line-height: 1; }
   #r-header-view img {
-    border-radius: 125px;
+    border-radius: 50%;
     padding: 15px 10px; }
   #r-header-view h1, #r-header-view h2 {
     padding: 0;
@@ -28,7 +30,7 @@ h3 {
       display: inline-block;
       padding: 5px 8px; }
 
-#r-body-view #r-technical-skills-view p {
+#r-body-view #r-technical-skills-view p, #r-body-view #r-technical-skills-view section {
   margin: 0;
   padding: 0; }
 
@@ -37,3 +39,38 @@ h3 {
 
 #r-body-view ul {
   padding-left: 18px; }
+
+.r-nav {
+  top: 0;
+  width: 100%;
+  z-index: 15;
+  font-family: "Helvetica Neue"; }
+  .r-nav #r-nav-menu {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px;
+    padding: 5px 10px; }
+  .r-nav #r-nav-menu:hover {
+    background-color: rgba(200, 200, 200, 0.8); }
+  .r-nav #r-jump-menu {
+    display: none;
+    position: relative;
+    background-color: black;
+    color: white;
+    /*box-shadow: 0px 0px 43px 1px rgba(225, 225, 225, 0.73);*/
+    width: 100%;
+    height: 100%; }
+    .r-nav #r-jump-menu #r-jump-menu-items {
+      margin: 0;
+      padding: 5px;
+      list-style-type: none; }
+      .r-nav #r-jump-menu #r-jump-menu-items h4 {
+        font-size: 1em; }
+    .r-nav #r-jump-menu #r-jump-menu-items li {
+      display: inline;
+      font-size: 1em;
+      font-weight: 100; }
+    .r-nav #r-jump-menu #r-jump-menu-items li:after {
+      content: " | ";
+      /* menu item separator */ }
+    .r-nav #r-jump-menu #r-jump-menu-items li:last-of-type:after {
+      content: ""; }
