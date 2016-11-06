@@ -55,6 +55,20 @@ h3 {
 	table {
 		min-width: 100%;
 	}
+	
+	ul {
+		padding-left: 18px; 
+	}
+
+}
+
+.r-nav {
+	top: 0;
+	width: 100%;
+	z-index: 15;
+	
+	font-family: "Helvetica Neue";
+
 }
 
 .r-nav {
