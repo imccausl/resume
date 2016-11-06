@@ -37,6 +37,12 @@ h3 {
 #r-body-view table {
   min-width: 100%; }
 
+<<<<<<< HEAD
+=======
+#r-body-view ul {
+  padding-left: 18px; }
+
+>>>>>>> production
 .r-nav {
   top: 0;
   width: 100%;
