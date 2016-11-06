@@ -7,8 +7,8 @@
 		templates: [],
 		sectionHeaders: '<h3 class="text-capitalize">{{modifyHeader}}{{this.title}}</h3>',
 		navMenu: {
-			open: 'fa-chevron-left',
-			close: 'fa-close'
+			open: 'fa-chevron-down',
+			close: 'fa-chevron-up'
 		},
 		
 		// methods
@@ -38,7 +38,7 @@
 
 	var view = {
 		init: function init() {
-			var expTemplatePartial;
+			var partialSource;
 
 			console.log('Initializing the view!');
 
@@ -51,12 +51,22 @@
 
 			//register reusable experience section partial
 			//to use with both relevant and other professional experience sections
-			expTemplatePartial = $('#r-experience-partial').html();
-			Handlebars.registerPartial('experiencePartial', expTemplatePartial);
+			partialSource = $('#r-experience-partial').html();
+			Handlebars.registerPartial('experiencePartial', partialSource);
 
+			// TEMPORARY PLACEMENT OF CODE TO BUILD NAV MENU PARTIAL FOR TESTING AND DEV PURPOSES
+			console.log("Registering nav menu template partial!");
+			
+			partialSource = $('#r-nav-template').html();
+			Handlebars.registerPartial('navMenu', partialSource);
+			
 			app.getTemplateHTML(); // get the template HTML and store it in the model.
 			app.buildHeader(model.resume.info); //builds the site header		
 			app.buildResume(); // compile the templates and insert the data from the model into them.
+			
+			//FOR TESTING PURPOSES
+			buildMenu(extractMenu(model.resume));
+			addClickListenerToNavMenu();
 		},
 
 		sortData: function sortData(source, sortBy) {
@@ -77,9 +87,6 @@
 			}).then(function (response) {
 				// since parsing was successful, start initializing the view
 				
-				//FOR TESTING PURPOSES
-				buildMenu(extractMenu(model.resume));
-				
 				view.init();
 			}).catch(function (status) {
 				console.log(status); // something went wrong, log it to the console for now.
@@ -90,10 +97,10 @@
 			var source, template, placement;
 
 			source = $('#r-header').html();
-			template = Handlebars.compile(source);
-			model.header = template(headerData);
-
-			$('#r-header-view').append(model.header);
+			model.header = Handlebars.compile(source);
+			
+			$('#r-header-view').append(model.header(headerData));
+			
 		},
 
 		buildResume: function buildResume() {
@@ -131,10 +138,8 @@
 			}
 		}
 	};
-
-	/* temporary placement of test items for resume navigation */
 	
-	// menu builder
+		// menu builder
 	function extractMenu(dataSet) {
 		var menuArray = [], key = "";
 		
@@ -148,27 +153,42 @@
 	}
 	
 	function buildMenu(items) {
+		console.log("Building the menu!");
 		for(var i=0; i < items.length; i++){
-			$('#r-jump-menu-items').append('<li><h3>' + items[i] + '.</h3></li>');
+			$('#r-jump-menu-items').append('<li>' + items[i] + '</li>');
 		}
 	}
 	
-	// click listener
-	$('#r-nav-menu').on('click', function() {
-		$('#r-jump-menu').toggle('.show');
-				
-		if ( $('#r-nav-icon').hasClass(model.navMenu.open) ) {
-			$('#r-nav-icon').removeClass(model.navMenu.open);
-			$('#r-nav-icon').addClass(model.navMenu.close);
-		} else { 
-			$('#r-nav-icon').removeClass(model.navMenu.close);
-			$('#r-nav-icon').addClass(model.navMenu.open);
-		}
-	});
-	
-	/* END temporary placement */
-	
 	//start it up!
 	app.init();
+	
+	/* temporary placement of test items for resume navigation */
+	
+
+	function addClickListenerToNavMenu() {
+		
+		// click listener
+		console.log($('#r-nav-menu').html());
+		$('#r-nav-menu').on('click', function(e) {
+			e.preventDefault();
+			
+			var elm = $('#r-jump-menu');
+			var icnElm = $('#r-nav-icon');
+			
+			if ( icnElm.hasClass(model.navMenu.open) ) {
+				elm.hide().animate({height: "toggle"});
+				
+				icnElm.removeClass(model.navMenu.open);
+				icnElm.addClass(model.navMenu.close);
+			} else { 
+				elm.show().animate({height:"toggle"});
+				
+				icnElm.removeClass(model.navMenu.close);
+				icnElm.addClass(model.navMenu.open);
+			}
+		});
+	}		
+	/* END temporary placement */
+	
 })(document);
 //# sourceMappingURL=main.js.map

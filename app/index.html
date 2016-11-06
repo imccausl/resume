@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,27 +20,19 @@
 
 	<body>
 		<!-- Main Page -->
-		<div id="r-view" class="container">
+		<div id="r-view">
 			<header id="r-header-view" class="text-center">
-				
-				<nav class="r-nav text-right">
-					<a id="r-nav-menu" href="#" data-toggle="r-jump-menu">
-						<span id="r-nav-icon" class="fa fa-lg fa-chevron-left"></span>
-					</a>
-					
-					<div id="r-jump-menu" class="text-left">
-						<ul id="r-jump-menu-items"></ul>
-					</div>
-				</nav>
-				
+		
 			</header>
-			
+		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 					<section id="r-body-view" class="text-left"></section>
 				</div>
 			</div>
-		</div><!-- /r-view /container-fluid -->
+		</div><!-- /container -->
+		</div><!-- /#r-view -->
+		
 		<!-- ENDOF Main Page -->
 		
 		<!-- Templates -->
@@ -51,11 +43,14 @@
 			<h2 class="text-capitalize">{{description}}</h2>
 			<h2 class="text-capitalize">{{city}}, {{province}}</h2>
 			
+			
 			<div id="r-connect" class="btn btn-info">
 				{{#each socialFeed}}
 				<a href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
 				{{/each}}
 			</div>
+			
+			{{> navMenu}}
 			
 		</script>
 		
@@ -165,11 +160,27 @@
 					</tr>
 		</script>
 		
+		<script id="r-nav-template" type="text/x-handlebars-template">
+			
+			<nav class="r-nav text-center" id="r-fixed-menu" data-spy="affix" data-offset-top="440">
+				<div id="r-jump-menu" class="text-center">
+					<ul id="r-jump-menu-items"><li>Top of Page</li></ul>
+				</div>
+				
+				<a id="r-nav-menu" href="#" class="btn btn-default">
+					 <span id="r-nav-icon" class="fa fa-chevron-down"></span>
+				</a>	
+				
+			</nav>
+			
+		</script>
+		
 	
 		<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
 		<!-- build:js scripts/libraries.js -->
 		<!-- bower:js -->
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 		<script src="/bower_components/modernizr/modernizr.js"></script>
 		<script src="/bower_components/handlebars/handlebars.js"></script>
 		<!-- endbower -->
