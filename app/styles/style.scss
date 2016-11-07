@@ -8,10 +8,41 @@ h3 {
 	font-weight: 700;
 }
 
+section {
+	z-index: 1;
+	pointer-events: none;
+}
+
+section:before {
+	display: block;
+	
+	content: " ";
+	margin-top: -40px;
+	height: 40px;
+	visibility: hidden;
+}
+
+footer {
+	position: relative;
+	bottom: -20px;
+	
+	margin-bottom: 0;
+	margin-top: 30px;
+	
+	padding-bottom: 0;
+	
+	height: 250px;
+	background-color: black;
+}
+
 /* modular stylings */
 .img-small {
 	width: 250px;
 	height: 250px;
+}
+
+.jump-active {
+	font-weight: 600;
 }
 
 /* layout stylings */
@@ -66,6 +97,7 @@ h3 {
 	top: 0;
 	width: 100%;
 	z-index: 15;
+	pointer-events: auto;
 	
 	font-family: "Helvetica Neue";
 
@@ -110,6 +142,10 @@ h3 {
 			h4 {
 				font-size: 1em;
 			}
+			
+			a, a:link, a:hover {
+				color: white;
+			}
 		}
 		
 		#r-jump-menu-items {
@@ -128,3 +164,6 @@ h3 {
 		
 	}
 }
+
+/* custom breakpoints */
+
