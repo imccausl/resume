@@ -211,7 +211,7 @@
 	    "content":
         {
             "languages and frameworks":"HTML5, CSS3, Sass, JavaScript, jQuery, Jasmine, Bootstrap, Angular, Handlebars, Backbone",
-            "development tools":"Coda, Git, Yeoman, Bower, Node/NPM, Grunt, Gulp",
+            "development tools":"Coda, Git, Yeoman, Bower, Node/NPM, Grunt, Gulp, Chrome DevTools",
             "operating systems":"macOS, Windows, iOS, Android, Linux/Unix",
             "applications":"Excel, Word, PointPoint, Adobe Acrobat, InDesign, OmniGraffle"
         }
