@@ -117,15 +117,19 @@
 				<table>
 					{{#each this.content}}
 					<tr>
-						<td>{{this.year}}</td>
-						<td>{{this.degree}}, <strong>{{this.program}}</strong>, {{this.institution}}, {{this.location}} {{#unless this.completed}}({{this.notes}}){{/unless}}</td>
+						<td style="width:15%;">{{this.year}}</td>
+						<td style="width:85%;">{{this.degree}},
+						<strong> {{this.program}}</strong>,
+						{{this.institution}}, {{this.location}} {{#unless this.completed}}({{this.notes}}){{/unless}}</td>
 					</tr>
 					
 					{{#each this.awards}}
 					{{#if this}}
 					<tr>
-						<td></td>
-						<td><em>Awarded a {{this}}</em></td>
+						<td></td>	
+						<ul>
+							<td><li><em>Awarded a {{this}}</em></li></td>
+						</ul>
 					</tr>
 					{{/if}}
 					{{/each}}
@@ -145,9 +149,9 @@
 		
 		<script id="r-experience-partial" type="text/x-handlebars-template">
 			<tr>
-						<td>{{this.start}}-{{this.end}}</td>
-						<th>{{this.position}}, {{this.company}}</th>
-						<td>{{this.location}}</td>
+						<td style="width:20%;">{{this.start}}-{{this.end}}</td>
+						<th style="width:65%;">{{this.position}}, {{this.company}}</th>
+						<td style="width:15%;">{{this.location}}</td>
 					</tr>
 					<tr>
 						<td colspan="3">
