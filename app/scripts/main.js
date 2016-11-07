@@ -154,8 +154,13 @@
 	
 	function buildMenu(items) {
 		console.log("Building the menu!");
+		var menuIds = document.getElementsByTagName('section'), item = 1, menuId;
+		
 		for(var i=0; i < items.length; i++){
-			$('#r-jump-menu-items').append('<li>' + items[i] + '</li>');
+			menuId = '#' + menuIds[item].id;
+			
+			$('#r-jump-menu-items').append('<li><a href="' + menuId + '">' + items[i] + '</a></li>');
+			item++;
 		}
 	}
 	
