@@ -154,12 +154,14 @@
 	
 	function buildMenu(items) {
 		console.log("Building the menu!");
-		var menuIds = document.getElementsByTagName('section'), item = 1, menuId;
+		var menuIds = document.getElementsByTagName('section'), item = 1, menuId, fullItem;
 		
 		for(var i=0; i < items.length; i++){
 			menuId = '#' + menuIds[item].id;
+			fullItem = '<li><a href="' + menuId + '">' + items[i] + '</a></li>';
 			
-			$('#r-jump-menu-items').append('<li><a href="' + menuId + '">' + items[i] + '</a></li>');
+			$('#r-jump-menu-items').append(fullItem);
+			$('#r-footer-menu').append(fullItem);
 			item++;
 		}
 	}
