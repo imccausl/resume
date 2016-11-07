@@ -71,7 +71,7 @@
 			
 			//FOR TESTING PURPOSES
 			buildMenu(extractMenu(model.resume));
-			addClickListenerToNavMenu();
+			addClickListeners();
 		},
 
 		sortData: function sortData(source, sortBy) {
@@ -99,7 +99,7 @@
 		},
 
 		buildHeader: function buildHeader(headerData) {
-			var source, template, placement;
+			var source;
 
 			source = $('#r-header').html();
 			model.header = Handlebars.compile(source);
@@ -176,16 +176,9 @@
 	
 	/* temporary placement of test items for resume navigation */
 	
-
-	function addClickListenerToNavMenu() {
-		
-		// click listener
-		console.log($('#r-nav-menu').html());
-		$('#r-nav-menu').on('click', function(e) {
-			e.preventDefault();
-			
-			var elm = $('#r-jump-menu');
-			var icnElm = $('#r-nav-icon');
+	function navMenuClicked() {
+		var elm = $('#r-jump-menu'),
+			icnElm = $('#r-nav-icon');
 			
 			if ( icnElm.hasClass(model.navMenu.open) ) {
 				elm.hide().animate({height: "toggle"});
@@ -198,6 +191,21 @@
 				icnElm.removeClass(model.navMenu.close);
 				icnElm.addClass(model.navMenu.open);
 			}
+			
+	}
+	
+	function addClickListeners() {
+		
+		// click listener
+		console.log($('#r-nav-menu').html());
+		$('#r-nav-menu').on('click', function(e) {
+			e.preventDefault();
+			navMenuClicked();
+			
+		});
+		
+		$(document).on('click', function(e) {
+			// navMenuClicked('close');
 		});
 	}		
 	/* END temporary placement */
