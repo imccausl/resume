@@ -38,7 +38,8 @@
 
 	var view = {
 		init: function init() {
-			var partialSource;
+			var partialSource,
+				copyright = new Date();
 
 			console.log('Initializing the view!');
 
@@ -59,6 +60,10 @@
 			
 			partialSource = $('#r-nav-template').html();
 			Handlebars.registerPartial('navMenu', partialSource);
+			
+			// put the current year in the copyright date in footer.
+			console.log("Putting current year in the footer", copyright.getFullYear() + "!");
+			$('#r-copyright').html(copyright.getFullYear());
 			
 			app.getTemplateHTML(); // get the template HTML and store it in the model.
 			app.buildHeader(model.resume.info); //builds the site header		
