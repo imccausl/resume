@@ -21,10 +21,17 @@ footer {
   position: relative;
   bottom: -20px;
   margin-bottom: 0;
+  padding-bottom: 20px;
   margin-top: 30px;
   padding-bottom: 0;
-  height: 250px;
-  background-color: black; }
+  background-color: black;
+  color: white; }
+  footer a:link, footer a:visited {
+    color: white; }
+  footer ul {
+    list-style: none;
+    text-indent: none;
+    padding: 0 0 20px 0; }
 
 /* modular stylings */
 .img-small {
