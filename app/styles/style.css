@@ -24,6 +24,8 @@ footer {
   padding-bottom: 20px;
   margin-top: 30px;
   padding-bottom: 0;
+  font-family: "Helvetica Neue";
+  font-weight: 200;
   background-color: black;
   color: white; }
   footer a:link, footer a:visited {
@@ -32,6 +34,8 @@ footer {
     list-style: none;
     text-indent: none;
     padding: 0 0 20px 0; }
+  footer h2, footer h3, footer h4, footer h5, footer h6 {
+    font-weight: 200; }
 
 /* modular stylings */
 .img-small {
