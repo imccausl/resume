@@ -27,7 +27,7 @@ footer {
   padding-bottom: 20px;
   margin-top: 30px;
   padding-bottom: 0;
-  font-family: "Share Tech Mono";
+  font-family: "Bungee Hairline";
   /*font-weight: 200;*/
   background-color: black;
   color: white; }
@@ -41,8 +41,7 @@ footer {
     text-indent: none;
     padding: 0 0 20px 0; }
   footer h3, footer h4, footer h5, footer h6 {
-    font-size: 1.7em;
-    font-family: "VT323";
+    font-size: 2.5em;
     font-weight: 200; }
   footer .copyright {
     font-family: "VT323"; }
