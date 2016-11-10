@@ -56,13 +56,13 @@
 			Handlebars.registerPartial('experiencePartial', partialSource);
 
 			// TEMPORARY PLACEMENT OF CODE TO BUILD NAV MENU PARTIAL FOR TESTING AND DEV PURPOSES
-			console.log("Registering nav menu template partial!");
+			console.log('Registering nav menu template partial!');
 			
 			partialSource = $('#r-nav-template').html();
 			Handlebars.registerPartial('navMenu', partialSource);
 			
 			// put the current year in the copyright date in footer.
-			console.log("Putting current year in the footer", copyright.getFullYear() + "!");
+			console.log('Putting current year in the footer', copyright.getFullYear() + '!');
 			$('#r-copyright').html(copyright.getFullYear());
 			
 			app.getTemplateHTML(); // get the template HTML and store it in the model.
@@ -155,7 +155,7 @@
 	
 		// menu builder
 	function extractMenu(dataSet) {
-		var menuArray = [], key = "";
+		var menuArray = [], key = '';
 		
 		for(key in dataSet) {
 			if(dataSet[key].title) {
@@ -167,7 +167,7 @@
 	}
 	
 	function buildMenu(items) {
-		console.log("Building the menu!");
+		console.log('Building the menu!');
 		var menuIds = document.getElementsByTagName('section'), item = 1, menuId, fullItem, testIds = [];
 		
 		for(var i=0; i < items.length; i++){
@@ -192,12 +192,12 @@
 			icnElm = $('#r-nav-icon');
 			
 			if ( icnElm.hasClass(model.navMenu.open) ) {
-				elm.hide().animate({height: "toggle"});
+				elm.hide().animate({height: 'toggle'});
 				
 				icnElm.removeClass(model.navMenu.open);
 				icnElm.addClass(model.navMenu.close);
 			} else { 
-				elm.show().animate({height:"toggle"});
+				elm.show().animate({height:'toggle'});
 				
 				icnElm.removeClass(model.navMenu.close);
 				icnElm.addClass(model.navMenu.open);
