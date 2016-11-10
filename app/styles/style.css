@@ -78,6 +78,8 @@ footer {
 
 #r-body-view table {
   min-width: 100%; }
+  #r-body-view table tr td, #r-body-view table tr th {
+    vertical-align: top; }
 
 #r-body-view ul {
   padding-left: 18px; }
