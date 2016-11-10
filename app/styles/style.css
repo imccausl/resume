@@ -27,8 +27,7 @@ footer {
   padding-bottom: 20px;
   margin-top: 30px;
   padding-bottom: 0;
-  font-family: "Bungee Hairline";
-  /*font-weight: 200;*/
+  font-family: "Share Tech Mono";
   background-color: black;
   color: white; }
   footer a:link, footer a:visited {
@@ -45,6 +44,8 @@ footer {
     font-weight: 200; }
   footer .copyright {
     font-family: "VT323"; }
+  footer #r-footer-menu {
+    padding-top: 10px; }
 
 .r-social--button-rounded {
   background-color: #eeeeee;
