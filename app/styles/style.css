@@ -35,7 +35,7 @@ footer {
     color: white; }
   footer a:hover {
     text-decoration: none;
-    color: #4db3d6; }
+    color: #2864a8; }
   footer ul {
     list-style: none;
     text-indent: none;
@@ -159,6 +159,6 @@ footer {
           color: white; }
         .r-nav #r-jump-menu #r-jump-menu-items li a:hover {
           text-decoration: none;
-          color: #4db3d6; }
+          color: #2864a8; }
 
 /* custom breakpoints */
