@@ -6,6 +6,9 @@ body {
 h3 {
   font-weight: 700; }
 
+a {
+  transition: all ease-in 250ms; }
+
 section {
   z-index: 1;
   pointer-events: none; }
@@ -24,8 +27,8 @@ footer {
   padding-bottom: 20px;
   margin-top: 30px;
   padding-bottom: 0;
-  font-family: "Helvetica Neue";
-  font-weight: 200;
+  font-family: "Share Tech Mono";
+  /*font-weight: 200;*/
   background-color: black;
   color: white; }
   footer a:link, footer a:visited {
@@ -34,8 +37,12 @@ footer {
     list-style: none;
     text-indent: none;
     padding: 0 0 20px 0; }
-  footer h2, footer h3, footer h4, footer h5, footer h6 {
+  footer h3, footer h4, footer h5, footer h6 {
+    font-size: 1.7em;
+    font-family: "VT323";
     font-weight: 200; }
+  footer .copyright {
+    font-family: "VT323"; }
 
 /* modular stylings */
 .img-small {
@@ -43,7 +50,8 @@ footer {
   height: 250px; }
 
 .jump-active {
-  font-weight: 600; }
+  font-weight: 600;
+  border-bottom: 3px solid white; }
 
 /* layout stylings */
 #r-header-view {
@@ -56,7 +64,7 @@ footer {
     padding: 0;
     margin: 0; }
   #r-header-view #r-connect {
-    font-family: "Raleway", "Helvetica", sans-serif;
+    font-family: "Helvetica", sans-serif;
     cursor: default;
     margin: 10px;
     letter-spacing: 0.5px; }
@@ -78,14 +86,7 @@ footer {
   top: 0;
   width: 100%;
   z-index: 15;
-  pointer-events: auto;
-  font-family: "Helvetica Neue"; }
-
-.r-nav {
-  top: 0;
-  width: 100%;
-  z-index: 15;
-  font-family: "Helvetica Neue"; }
+  pointer-events: auto; }
   .r-nav #r-nav-menu {
     background-color: rgba(255, 255, 255, 0.8);
     margin-top: 10px;
@@ -106,16 +107,30 @@ footer {
       list-style-type: none; }
       .r-nav #r-jump-menu #r-jump-menu-items h4 {
         font-size: 1em; }
-      .r-nav #r-jump-menu #r-jump-menu-items a, .r-nav #r-jump-menu #r-jump-menu-items a:link, .r-nav #r-jump-menu #r-jump-menu-items a:hover {
-        color: white; }
-    .r-nav #r-jump-menu #r-jump-menu-items li {
-      display: inline;
-      font-size: 1em;
-      font-weight: 100; }
-    .r-nav #r-jump-menu #r-jump-menu-items li:after {
-      content: " | ";
-      /* menu item separator */ }
-    .r-nav #r-jump-menu #r-jump-menu-items li:last-of-type:after {
-      content: ""; }
+      .r-nav #r-jump-menu #r-jump-menu-items li:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em; }
+      .r-nav #r-jump-menu #r-jump-menu-items li {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        margin: 0;
+        padding: 5px 15px;
+        height: 50px;
+        display: inline;
+        font-family: "VT323";
+        font-weight: 400;
+        font-size: 1.3em; }
+        .r-nav #r-jump-menu #r-jump-menu-items li a {
+          display: inline-block;
+          vertical-align: middle; }
+        .r-nav #r-jump-menu #r-jump-menu-items li a:link, .r-nav #r-jump-menu #r-jump-menu-items li a:visited {
+          color: white; }
+        .r-nav #r-jump-menu #r-jump-menu-items li a:hover {
+          text-decoration: none;
+          color: #4db3d6; }
 
 /* custom breakpoints */

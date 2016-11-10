@@ -159,16 +159,18 @@
 	
 	function buildMenu(items) {
 		console.log("Building the menu!");
-		var menuIds = document.getElementsByTagName('section'), item = 1, menuId, fullItem;
+		var menuIds = document.getElementsByTagName('section'), item = 1, menuId, fullItem, testIds = [];
 		
 		for(var i=0; i < items.length; i++){
 			menuId = '#' + menuIds[item].id;
-			fullItem = '<li><a href="' + menuId + '">' + items[i] + '</a></li>';
+			fullItem = '<li class="col-xs-6 col-sm-4 col-md-2"><a href="' + menuId + '">' + items[i] + '</a></li>';
+			testIds.push(menuId); // for testing purposes
 			
 			$('#r-jump-menu-items').append(fullItem);
-			$('#r-footer-menu').append(fullItem);
+			$('#r-footer-menu').append('<li><a href="' + menuId + '">' + items[i] + '</a></li>');
 			item++;
 		}
+	
 	}
 	
 	//start it up!
@@ -199,6 +201,7 @@
 		// click listener
 		console.log($('#r-nav-menu').html());
 		$('#r-nav-menu').on('click', function(e) {
+			
 			e.preventDefault();
 			navMenuClicked();
 			

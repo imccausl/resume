@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- Framework stylesheets / Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|Heebo:100" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|Share+Tech+Mono|VT323" rel="stylesheet">
 		<!-- build:css styles/main.css -->
 		<!-- bower:css -->
 		<!-- endbower -->
@@ -53,7 +53,7 @@
 					</div>
 			</div>
 			<div class="row">
-				<p class="text-center">© <span id="r-copyright">2015</span> Ian McCausland. All Rights Reserved.</p>
+				<p class="text-center copyright">© <span id="r-copyright">2015</span> Ian McCausland. All Rights Reserved.</p>
 			</div>
 		</footer>
 		<!-- ENDOF Main Page -->
@@ -189,9 +189,11 @@
 		
 		<script id="r-nav-template" type="text/x-handlebars-template">
 			
-			<nav class="r-nav text-center" id="r-fixed-menu" data-spy="affix" data-offset-top="420">
+			<nav class="r-nav text-center" id="r-fixed-menu" data-spy="affix" data-offset-top="350">
 				<div id="r-jump-menu" class="text-center">
-					<ul id="r-jump-menu-items"><li><a href="#top" class="jump-active">{{fullName}}</a></li></ul>
+					<div class="container-fluid">
+						<ul class="row clearfix" id="r-jump-menu-items"></ul>
+					</div>
 				</div>
 				
 				<a id="r-nav-menu" href="#" class="btn btn-default">
