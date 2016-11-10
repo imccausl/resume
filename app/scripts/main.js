@@ -208,7 +208,6 @@
 	function addClickListeners() {
 		
 		// click listener
-		console.log($('#r-nav-menu').html());
 		$('#r-nav-menu').on('click', function(e) {
 			
 			e.preventDefault();
