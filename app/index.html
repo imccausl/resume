@@ -168,6 +168,7 @@
 						<th style="width:65%;">{{this.position}}, {{this.company}}</th>
 						<td style="width:15%;">{{this.location}}</td>
 					</tr>
+					{{#if this.highlights}}
 					<tr>
 						<td colspan="3">
 							<ul>
@@ -177,6 +178,7 @@
 							</ul>
 						</td>
 					</tr>
+					{{/if}}
 		</script>
 		
 		<script id="r-nav-template" type="text/x-handlebars-template">
@@ -209,7 +211,6 @@
 		<!-- build:js scripts/libraries.js -->
 		<!-- bower:js -->
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
-		<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 		<script src="/bower_components/modernizr/modernizr.js"></script>
 		<script src="/bower_components/handlebars/handlebars.js"></script>
 		<!-- endbower -->
