@@ -176,7 +176,6 @@
 			testIds.push(menuId); // for testing purposes
 			
 			$('#r-jump-menu-items').append(fullItem);
-			$('#r-footer-menu').append('<li><a href="' + menuId + '">' + items[i] + '</a></li>');
 			item++;
 		}
 	
