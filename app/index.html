@@ -34,24 +34,15 @@
 		</div><!-- /#r-view -->
 		
 		<footer>
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row text-center">
-					<div class="col-sm-4">
-						<h3>Site</h3>
-						<ul class="text-center">
-							<li>About</li>
-							<li>Login</li>
-						</ul>
-					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-12">
 						<h3>Resume</h3>
 						<ul id="r-footer-menu" class="text-center"><li><a href="#top">Back to the Top</a></li></ul>
 					</div>
-					<div class="col-sm-4">
-						<h3>Social</h3>
-					</div>
 			</div>
 			<div class="row">
+				<div id="r-footer--socialview" class="text-center"></div>
 				<p class="text-center copyright">© <span id="r-copyright"></span> Ian McCausland. All Rights Reserved.</p>
 			</div>
 		</footer>
@@ -66,9 +57,9 @@
 			<h2 class="text-capitalize">{{city}}, {{province}}</h2>
 			
 			
-			<div id="r-connect" class="btn btn-info">
+			<div id="r-connect" class="btn r-social--button-rounded">
 				{{#each socialFeed}}
-				<a href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
+				<a id="{{this.service}}" href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
 				{{/each}}
 			</div>
 			
@@ -201,6 +192,14 @@
 				
 			</nav>
 			
+		</script>
+		
+		<script id="r-footer--social" type="text/x-handlebars-template">
+			{{#each this}}
+			<a id="{{this.service}}" href="{{this.url}}" target="_blank">
+				<span class="r-social fa fa-3x fa-{{this.service}}"></span>
+			</a>
+			{{/each}}
 		</script>
 		
 	

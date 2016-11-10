@@ -33,6 +33,9 @@ footer {
   color: white; }
   footer a:link, footer a:visited {
     color: white; }
+  footer a:hover {
+    text-decoration: none;
+    color: #4db3d6; }
   footer ul {
     list-style: none;
     text-indent: none;
@@ -43,6 +46,30 @@ footer {
     font-weight: 200; }
   footer .copyright {
     font-family: "VT323"; }
+
+.r-social--button-rounded {
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  border-radius: 4px; }
+
+/* Hover color change for social links */
+#twitter:hover {
+  color: #00aced; }
+
+#linkedin:hover {
+  color: #007bb6; }
+
+#skype:hover {
+  color: #00aff0; }
+
+#envelope:hover {
+  color: firebrick; }
+
+#github:hover {
+  color: #6e5494; }
+
+#medium:hover {
+  color: #3cb371; }
 
 /* modular stylings */
 .img-small {
@@ -88,7 +115,8 @@ footer {
   top: 0;
   width: 100%;
   z-index: 15;
-  pointer-events: auto; }
+  pointer-events: auto;
+  color: black; }
   .r-nav #r-nav-menu {
     background-color: rgba(255, 255, 255, 0.8);
     margin-top: 10px;

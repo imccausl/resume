@@ -12,7 +12,7 @@
 		},
 		
 		// methods
-		get: function get(path) {
+		get: function(path) {
 			return new Promise(function (resolve, reject) {
 				var req = new XMLHttpRequest();
 				req.open('GET', path);
@@ -37,7 +37,7 @@
 	};
 
 	var view = {
-		init: function init() {
+		init: function() {
 			var partialSource,
 				copyright = new Date();
 
@@ -68,13 +68,14 @@
 			app.getTemplateHTML(); // get the template HTML and store it in the model.
 			app.buildHeader(model.resume.info); //builds the site header		
 			app.buildResume(); // compile the templates and insert the data from the model into them.
+			app.buildFooter(model.resume.info.socialFeed);
 			
 			//FOR TESTING PURPOSES
 			buildMenu(extractMenu(model.resume));
 			addClickListeners();
 		},
 
-		sortData: function sortData(source, sortBy) {
+		sortData: function(source, sortBy) {
 			// sort experience by most recent to least recent employment
 
 			return source.sort(function (a, b) {
@@ -84,7 +85,7 @@
 	};
 
 	var app = {
-		init: function init() {
+		init: function() {
 			// the app initializes by loading the JSON data for the resume...
 			model.get('./resume.json').then(function (response) {
 				// ... and then, if the load was successful, parsing the JSON data and storing it in the model
@@ -98,7 +99,7 @@
 			});
 		},
 
-		buildHeader: function buildHeader(headerData) {
+		buildHeader: function(headerData) {
 			var source;
 
 			source = $('#r-header').html();
@@ -107,8 +108,16 @@
 			$('#r-header-view').append(model.header(headerData));
 			
 		},
+		
+		buildFooter: function(footerData) {
+			var source = $('#r-footer--social').html(),
+				template;
+			
+			template = Handlebars.compile(source);
+			$('#r-footer--socialview').html(template(footerData));
+		},
 
-		buildResume: function buildResume() {
+		buildResume: function() {
 			var resumeKeys = Object.keys(model.resume);
 			var dataIndex = 1,
 			    sectionHeader;
@@ -123,7 +132,7 @@
 			
 		},
 
-		compileTemplate: function compileTemplate(templateHTML) {
+		compileTemplate: function(templateHTML) {
 			return Handlebars.compile(templateHTML.innerHTML);
 		},
 
@@ -133,7 +142,7 @@
    * in order to compile each one, then store the compliled templates in an array in the model
    * to access at any time 
    *******************************************************************************************/
-		getTemplateHTML: function getTemplateHTML() {
+		getTemplateHTML: function() {
 			var templateLoc = document.getElementsByClassName('r-templates');
 			model.templates = []; // initialize the array when the function is called, just in case, so we don't 
 			// get any duplicate entries
