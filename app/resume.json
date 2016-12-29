@@ -1,12 +1,14 @@
 {
     "info":{
-        "fullName":"Ian R. McCausland",
+          "fullName":"Ian R. McCausland",
         "description":"Front-end web developer",
         "img":"images/bio.jpg",
+        "addr":"#1 18 Fernwood Gardens",
         "city":"Toronto",
         "province":"Ontario",
         "contact":{
-            "email":"imccausl@gmail.com"
+            "email":"imccausl@gmail.com",
+            "phone":"647.857.2192"
         },
         "socialFeed":[
         	{"service":"medium","url":"https://medium.com/modern-mythologies"},
@@ -176,17 +178,6 @@
             "notes":"In progress",
             "courses":[""]
 		},
-        {
-            "institution":"York University",
-            "degree":"PhD",
-            "program":"Humanities",
-            "year":"2016",
-            "location":"Toronto, ON",
-            "awards":[""],
-            "completed":false,
-            "notes":"Partially completed",
-            "courses":[""]
-        },
         {
             "institution":"Western University",
             "degree":"MA",

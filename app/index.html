@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="styles/style.css">
 		<!-- endbuild -->
 		
-		<title>Ian R. McCausland | Web Developer | Resume</title>
+		<title>Ian R. McCausland | Resume</title>
 	</head>
 
 	<body>
@@ -44,8 +44,12 @@
 			</div>
 			<div class="row">
 				<div id="r-footer--socialview" class="text-center"></div>
+				<section class="text-center">
+					<a id="login" class="btn btn-default" href="#">Login</a>
+				</section>
 				<p class="text-center copyright">© <span id="r-copyright"></span> Ian McCausland. All Rights Reserved.</p>
 			</div>
+						
 		</footer>
 		<!-- ENDOF Main Page -->
 		
@@ -54,10 +58,17 @@
 			<img class="img-small" src="{{img}}" alt="biographical image">
 						
 			<h1>{{fullName}}</h1>
-			<h2 class="text-capitalize">{{description}}</h2>
+			<!-- <h2 class="text-capitalize">{{description}}</h2> -->
+			<h2 class="text-capitalize">{{addr}}</h2>
 			<h2 class="text-capitalize">{{city}}, {{province}}</h2>
 			
-			
+			<!-- FOR PRINTING -->
+			<div id="r-contact">
+				<span class="fa fa-lg fa-mobile-phone "></span> <h4>{{contact.phone}}</h4> ||						
+				<span class="fa fa-envelope-o"></span> <h4>{{contact.email}}</h4>
+			</div>
+			<!-- /FOR PRINTING -->
+				
 			<div id="r-connect" class="btn r-social--button-rounded">
 				{{#each socialFeed}}
 				<a id="{{this.service}}" href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
@@ -169,7 +180,7 @@
 					</tr>
 					{{#if this.highlights}}
 					<tr>
-						<td colspan="3">
+						<td colspan="3" style="width:90%">
 							<ul>
 								{{#each this.highlights}}
 								<li>{{{this}}}.</li>
