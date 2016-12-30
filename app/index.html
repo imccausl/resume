@@ -54,6 +54,7 @@
 		
 		<!-- Templates -->
 		<script id="r-header" type="text/x-handlebars-template">
+		<section data-type="header">
 			<img class="img-small" src="{{img}}" alt="biographical image">
 						
 			<h1>{{fullName}}</h1>
@@ -75,11 +76,11 @@
 			</div>
 			
 			{{> navMenu}}
-			
+		</section>
 		</script>
 		
 		<script id="r-qualifications" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-qual-view">
+			<section id="r-qual-view" data-type="summary">
 				{{> sectionHeader}}
 				<ul>
 					{{#each this.content}}
@@ -90,7 +91,7 @@
 		</script>
 		
 		<script id="r-experience" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-exp-view">
+			<section id="r-exp-view" data-type="experience">
 				{{> sectionHeader modifyHeader="Relevant "}}
 				<table>
 					{{#each this.content}}
@@ -112,7 +113,7 @@
 		</script>
 		
 		<script id="r-volunteer" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-volunteer-exp-view">
+			<section id="r-volunteer-exp-view" data-type="volunteer-experience">
 				{{> sectionHeader}}
 				<table>
 					{{#each this.content}}
@@ -123,7 +124,7 @@
 		</script>
 		
 		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-publications-view">
+			<section id="r-publications-view" data-type="publications">
 				{{> sectionHeader}}
 				<table>
 					<tbody>
@@ -136,7 +137,7 @@
 		</script>
 		
 		<script id="r-education" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-education-view">
+			<section id="r-education-view" data-type="education">
 				{{> sectionHeader}}
 				<table>
 					{{#each this.content}}
@@ -163,10 +164,10 @@
 		</script>
 		
 		<script id="r-technical-skills" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-technical-skills-view">
+			<section id="r-technical-skills-view" data-type="skills">
 				{{> sectionHeader}}
 				{{#each this.content}}
-				<p><strong class="text-capitalize">{{@key}}</strong>: {{this}}</p>
+				<p><strong class="text-capitalize">{{this.category}}</strong>: {{this.skills}}</p>
 				{{/each}}
 			</section>
 		</script>

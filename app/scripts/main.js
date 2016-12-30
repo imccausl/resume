@@ -2,6 +2,7 @@
 
 (function (document) {
 	var model = {
+		path: "http://localhost:8000/api/resume",
 		resume: {},
 		header: {},
 		templates: [],
@@ -87,9 +88,11 @@
 	var app = {
 		init: function() {
 			// the app initializes by loading the JSON data for the resume...
-			model.get('./resume.json').then(function (response) {
+			model.get(model.path).then(function (response) {
 				// ... and then, if the load was successful, parsing the JSON data and storing it in the model
-				model.resume = JSON.parse(response);
+				
+				model.resume = JSON.parse(response)[0];
+				console.log(model.resume);
 			}).then(function (response) {
 				// since parsing was successful, start initializing the view
 				

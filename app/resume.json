@@ -1,6 +1,6 @@
 {
     "info":{
-          "fullName":"Ian R. McCausland",
+        "fullName":"Ian R. McCausland",
         "description":"Front-end web developer",
         "img":"images/bio.jpg",
         "addr":"#1 18 Fernwood Gardens",
@@ -203,12 +203,22 @@
     },
     "technicalSkills":{
 	    "title":"Technical Skills",
-	    "content":
+	    "content": [
         {
-            "languages and frameworks":"HTML5, CSS3, Sass, JavaScript, jQuery, Jasmine, Bootstrap, Angular, Handlebars, Backbone",
-            "development tools":"Coda, Git, JSLint, Yeoman, Bower, Node/NPM, Grunt, Gulp, Chrome DevTools",
-            "operating systems":"macOS, Windows, iOS, Android, Linux/Unix",
-            "applications":"Excel, Word, PointPoint, Adobe Acrobat, InDesign, OmniGraffle"
-        }
+            "category": "languages and frameworks",
+            "skills": "HTML5, CSS3, Sass, JavaScript, jQuery, Jasmine, Bootstrap, Angular, Handlebars, Backbone"
+        },
+        {
+            "category":"development tools",
+            "skills":"Coda, Git, JSLint, Yeoman, Bower, Node/NPM, Grunt, Gulp, Chrome DevTools"
+        },
+        {
+            "category":"operating systems",
+            "skills":"macOS, Windows, iOS, Android, Linux/Unix"
+        },
+        {
+            "category":"applications",
+            "skills":"Excel, Word, PointPoint, Adobe Acrobat, InDesign, OmniGraffle"
+        } ]
 	}
 }
