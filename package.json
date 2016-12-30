@@ -3,7 +3,7 @@
   "engines": {
     "node": ">=4"
   },
- "name": "dynamic-resume",
+  "name": "dynamic-resume",
   "version": "1.0.0",
   "description": "A resume for my portfolio site that changes based on parameters that I specify in a JSON file.",
   "main": "gulpfile.js",
@@ -16,6 +16,7 @@
     "babel-register": "^6.18.0",
     "browser-sync": "^2.17.5",
     "del": "^2.2.2",
+    "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
@@ -34,6 +35,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.1.2",
     "main-bower-files": "^2.13.1",
+    "mongoose": "^4.7.5",
     "run-sequence": "^1.2.2",
     "wiredep": "^4.0.0"
   },

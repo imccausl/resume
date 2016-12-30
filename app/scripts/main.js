@@ -234,6 +234,8 @@
 			
 		});
 		
+		
+		
 		$(document).on('click', function(e) {
 			// navMenuClicked('close');
 		});
