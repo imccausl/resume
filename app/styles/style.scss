@@ -58,16 +58,21 @@ footer {
 	}
 	
 	h3, h4, h5, h6 {
-		font-size: 2.5em;
+		font-size: 1.5em;
 		font-weight: 200;
 	}
 	
-	.copyright {
+	.footer--default-font {
 		font-family: "VT323";
 	}
 	
 	#r-footer-menu {
 		padding-top: 10px;
+	}
+	
+	section {
+		z-index: 5;
+		pointer-events: inherit;
 	}
 }
 
@@ -259,11 +264,20 @@ footer {
 	}
 }
 
-/* custom breakpoints */
-@page { size:8.5in 11in; margin: 1.4in;}
+#login {
+	font-size: 1.3em;
+}
+
+/* media queries */
+@page { size:8.5in 11in; margin: 1.1in;}
+
 @media print {
 	footer, .r-social--button-rounded, #r-fixed-menu, #r-nav-menu, .img-small {
 		display: none;
+	}
+	
+	body {
+		font-size: 18px;
 	}
 	
 	#r-contact {

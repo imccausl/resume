@@ -153,7 +153,27 @@
 		}
 	};
 	
-		// menu builder
+	var admin = {
+		editMode: {
+			start: function start() {
+				
+			},
+			
+			stop: function stop() {
+				
+			},
+			
+			save: function save() {
+				
+			},
+			
+			restore: function restore() {
+				
+			}
+		}
+	};
+	
+	// menu builder
 	function extractMenu(dataSet) {
 		var menuArray = [], key = '';
 		
