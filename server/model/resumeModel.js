@@ -22,13 +22,13 @@ var resumeModel = new Schema( {
 		} ] 
 	},
     
-    qualifications: { 
+    summary: { 
 	    title: {type: String, default: "Summary of Qualifications"},
 		content: [ { type: String } ],
 		order: Number 
 	},
 	
-    professionalExperience: { 
+    experience: { 
 	    title: {type: String, default: "Professional Experience"},
 		content: [ {
 			start: String,
@@ -78,9 +78,9 @@ var resumeModel = new Schema( {
 		order: Number 
 	},
 	
-    technicalSkills: { 
+    skills: { 
 	    title: {type: String, default: "Technical Skills"},
-		content: [ { category: String, skills: String } ],
+		content: [ { category: {type:String}, skills: {type:String} } ],
 		order: Number 
 	}
 

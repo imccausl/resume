@@ -9,6 +9,20 @@ const	http = require('http'),
 		port = process.env.PORT || 8000,
 		resumeRouter = express.Router();
 		
+
+/* resumeRouter.route('/:resumeId')
+	.get(function(req, res) {
+		Resume.findById(req.params.resumeId, function(err, resume) {
+			if (err) {
+				res.status(500).send(err);
+			} else {
+				res.json(resume);
+			}
+		})
+	}); */
+	
+
+
 resumeRouter.route('/resume')
 	.post(function(req, res) {
 		var resume = new Resume(req.body);

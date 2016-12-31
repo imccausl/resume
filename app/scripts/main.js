@@ -1,6 +1,22 @@
 'use strict';
 
 (function (document) {
+	var helpers = {
+		convertDataTypeName: function convertDataTypeName( typeName ) {
+			var temp = [];
+						
+			typeName = typeName.split('-');
+			
+			for (var i = 1; i < typeName.length; i++) { // skip the first word
+				typeName[i] = typeName[i].replace(typeName[i].charAt(0), typeName[i].charAt(0).toUpperCase());
+			}			
+			
+			typeName = typeName.join("");
+			
+			return typeName;
+		}
+	}
+	
 	var model = {
 		path: "http://localhost:8000/api/resume",
 		resume: {},
@@ -45,7 +61,7 @@
 			console.log('Initializing the view!');
 
 			// sort the professionalExperience and volunteer experience object arrays in descending order by start date.
-			model.resume.professionalExperience.content = view.sortData(model.resume.professionalExperience.content, 'start');
+			model.resume.experience.content = view.sortData(model.resume.experience.content, 'start');
 			model.resume.volunteerExperience.content = view.sortData(model.resume.volunteerExperience.content, 'start');
 			
 			// register resusable section header partial
@@ -67,6 +83,7 @@
 			$('#r-copyright').html(copyright.getFullYear());
 			
 			app.getTemplateHTML(); // get the template HTML and store it in the model.
+			console.log("model.resume.info", model.resume.info);
 			app.buildHeader(model.resume.info); //builds the site header		
 			app.buildResume(); // compile the templates and insert the data from the model into them.
 			app.buildFooter(model.resume.info.socialFeed);
@@ -121,14 +138,13 @@
 		},
 
 		buildResume: function() {
-			var resumeKeys = Object.keys(model.resume);
-			var dataIndex = 1,
-			    sectionHeader;
-
-			for (var i = 0; i < model.templates.length; i++) {
-				$('#r-body-view').append(model.templates[i](model.resume[resumeKeys[dataIndex]]));
-				dataIndex++;
-			}
+			model.templates.forEach( function( resumeSection ) {
+				console.log(resumeSection.dataType);
+				
+				$('#r-body-view').append(resumeSection.template(model.resume[resumeSection.dataType]));	
+			});
+			
+					
 		},
 		
 		buildNavigation: function() {
@@ -146,13 +162,24 @@
    * to access at any time 
    *******************************************************************************************/
 		getTemplateHTML: function() {
-			var templateLoc = document.getElementsByClassName('r-templates');
-			model.templates = []; // initialize the array when the function is called, just in case, so we don't 
+			var templateLoc = document.querySelectorAll('.r-templates');
+			
+			model.templates = [];
+			var tempType = null; // initialize the array when the function is called, just in case, so we don't 
 			// get any duplicate entries
-
-			for (var i = 0; i < templateLoc.length; i++) {
-				model.templates.push(this.compileTemplate(templateLoc[i]));
-			}
+			
+			templateLoc.forEach(function( elem ) {
+				tempType = elem.getAttribute('data-type');
+				
+				model.templates.push(
+					
+					{ 
+						dataType: helpers.convertDataTypeName(tempType),
+						template: app.compileTemplate(elem)
+					});
+			});
+			
+			console.log(model.templates);
 		}
 	};
 	

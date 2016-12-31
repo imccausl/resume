@@ -53,8 +53,8 @@
 		<!-- ENDOF Main Page -->
 		
 		<!-- Templates -->
-		<script id="r-header" type="text/x-handlebars-template">
-		<section data-type="header">
+		<script id="r-header" data-type="header" type="text/x-handlebars-template">
+		<section>
 			<img class="img-small" src="{{img}}" alt="biographical image">
 						
 			<h1>{{fullName}}</h1>
@@ -79,8 +79,8 @@
 		</section>
 		</script>
 		
-		<script id="r-qualifications" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-qual-view" data-type="summary">
+		<script id="r-qualifications" class="r-templates" data-type="summary" type="text/x-handlebars-template">
+			<section id="r-qual-view">
 				{{> sectionHeader}}
 				<ul>
 					{{#each this.content}}
@@ -90,8 +90,8 @@
 			</section>
 		</script>
 		
-		<script id="r-experience" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-exp-view" data-type="experience">
+		<script id="r-experience" class="r-templates" data-type="experience" type="text/x-handlebars-template">
+			<section id="r-exp-view">
 				{{> sectionHeader modifyHeader="Relevant "}}
 				<table>
 					{{#each this.content}}
@@ -112,8 +112,8 @@
 			</section>
 		</script>
 		
-		<script id="r-volunteer" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-volunteer-exp-view" data-type="volunteer-experience">
+		<script id="r-volunteer" class="r-templates" data-type="volunteer-experience" type="text/x-handlebars-template">
+			<section id="r-volunteer-exp-view">
 				{{> sectionHeader}}
 				<table>
 					{{#each this.content}}
@@ -123,8 +123,8 @@
 			</section>
 		</script>
 		
-		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-publications-view" data-type="publications">
+		<script id="r-publications" class="r-templates" data-type="publications" type="text/x-handlebars-template">
+			<section id="r-publications-view">
 				{{> sectionHeader}}
 				<table>
 					<tbody>
@@ -136,8 +136,8 @@
 			</section>
 		</script>
 		
-		<script id="r-education" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-education-view" data-type="education">
+		<script id="r-education" class="r-templates" data-type="education" type="text/x-handlebars-template">
+			<section id="r-education-view">
 				{{> sectionHeader}}
 				<table>
 					{{#each this.content}}
@@ -163,8 +163,8 @@
 			</section>
 		</script>
 		
-		<script id="r-technical-skills" class="r-templates" type="text/x-handlebars-template">
-			<section id="r-technical-skills-view" data-type="skills">
+		<script id="r-technical-skills" class="r-templates" data-type="skills" type="text/x-handlebars-template">
+			<section id="r-technical-skills-view">
 				{{> sectionHeader}}
 				{{#each this.content}}
 				<p><strong class="text-capitalize">{{this.category}}</strong>: {{this.skills}}</p>
