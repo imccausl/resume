@@ -14,6 +14,12 @@
 			typeName = typeName.join("");
 			
 			return typeName;
+		},
+		
+		getResumeSections: function getResumeSections() {
+			var sections = document.getElementsByTagName('section');
+									
+			return sections;
 		}
 	}
 	
@@ -89,7 +95,7 @@
 			app.buildFooter(model.resume.info.socialFeed);
 			
 			//FOR TESTING PURPOSES
-			buildMenu(extractMenu(model.resume));
+			buildMenu();
 			addClickListeners();
 		},
 
@@ -200,33 +206,30 @@
 			restore: function restore() {
 				
 			}
+		},
+		
+		init: function init () {
+			
+			// add edit buttons to interface
+			helpers.getResumeSections();
+			
 		}
 	};
 	
 	// menu builder
-	function extractMenu(dataSet) {
-		var menuArray = [], key = '';
-		
-		for(key in dataSet) {
-			if(dataSet[key].title) {
-				menuArray.push(dataSet[key].title);
-			}
-		}
-		
-		return menuArray;
-	}
 	
-	function buildMenu(items) {
+	function buildMenu() {
 		console.log('Building the menu!');
-		var menuIds = document.getElementsByTagName('section'), item = 1, menuId, fullItem, testIds = [];
+		var menuIds = helpers.getResumeSections(), item = 1, menuId, fullItem, testIds = [];
 		
-		for(var i=0; i < items.length; i++){
+		console.log(menuIds);
+		
+		for(; item < menuIds.length; item++){
 			menuId = '#' + menuIds[item].id;
-			fullItem = '<li class="col-xs-6 col-sm-4 col-md-2"><a href="' + menuId + '">' + items[i] + '</a></li>';
+			fullItem = '<li class="col-xs-6 col-sm-4 col-md-2"><a href="' + menuId + '">' + menuIds[item].children[0].textContent + '</a></li>';
 			testIds.push(menuId); // for testing purposes
 			
 			$('#r-jump-menu-items').append(fullItem);
-			item++;
 		}
 	
 	}
@@ -264,7 +267,10 @@
 			
 		});
 		
-		
+		$('#login').on('click', function(e) {
+			e.preventDefault();
+			admin.init();
+		})
 		
 		$(document).on('click', function(e) {
 			// navMenuClicked('close');

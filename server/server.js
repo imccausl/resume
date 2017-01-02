@@ -21,7 +21,13 @@ const	http = require('http'),
 		})
 	}); */
 	
+// allow CORS 
 
+app.use(function(req,res,next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
 
 resumeRouter.route('/resume')
 	.post(function(req, res) {
@@ -46,7 +52,7 @@ resumeRouter.route('/resume')
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json())
 app.use('/api', resumeRouter);
-app.use(express.static(path.join(__dirname, '../')));
+
 		
 app.get('/', function(req, res) {
 	res.send('Server is working.');
