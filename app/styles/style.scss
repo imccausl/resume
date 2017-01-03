@@ -287,7 +287,12 @@ footer {
 		
 	padding: 0;
 	margin: 0;
-	max-width: 33px;
+	min-width: 33px;
+	
+	#edit--button {
+		display: inline-block;
+		padding: 3px 10px;
+	}
 	
 }
 
@@ -303,7 +308,7 @@ footer {
 @page { size:8.5in 11in; margin: 1.1in;}
 
 @media print {
-	footer, .r-social--button-rounded, #r-fixed-menu, #r-nav-menu, .img-small {
+	footer, .r-social--button-rounded, #r-fixed-menu, #r-nav-menu, .img-small, .r--edit-section {
 		display: none;
 	}
 	

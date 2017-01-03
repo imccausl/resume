@@ -26,7 +26,7 @@
 			<header id="r-header-view" class="text-center">
 		
 			</header>
-		<div class="container">
+			<div class="container">
 			<!-- <div class="row">
 				<div class="col-xs-12"> -->
 					<section id="r-body-view" class="text-left"></section>
@@ -37,7 +37,7 @@
 		
 		<footer>
 			<div class="container">
-				<div class="row text-center">
+				<div class="row">
 					<div class="col-sm-12">
 						<ul id="r-footer-menu" class="text-center"><li><a href="#top"><span class="fa fa-arrow-up fa-lg"></span></a></li><li class="sr-only">Back to the Top</li></ul>
 					</div>
@@ -54,10 +54,11 @@
 		
 		<!-- Templates -->
 		<script id="r-header" data-type="header" type="text/x-handlebars-template">
+		<div class="container">
 			<img class="img-small" src="{{img}}" alt="biographical image">
 						
 			<h1>{{fullName}}</h1>
-			<!-- <h2 class="text-capitalize">{{description}}</h2> -->
+			<h2 class="text-capitalize">{{description}}</h2>
 			<h2 class="text-capitalize">{{addr}}</h2>
 			<h2 class="text-capitalize">{{city}}, {{province}}</h2>
 			
@@ -73,13 +74,15 @@
 				<a id="{{this.service}}" href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
 				{{/each}}
 			</div>
-			
+		</div>
+		
 			{{> navMenu}}
-				</script>
+			
+		</script>
 		
 		<script id="r-qualifications" class="r-templates" data-type="summary" type="text/x-handlebars-template">
 			<section id="r-qual-view">
-			<div class="row">
+			<div class="row-fluid">
 				<div class="col-xs-1 r--edit-section">
 					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
 				</div>
@@ -98,7 +101,7 @@
 		
 		<script id="r-experience" class="r-templates" data-type="experience" type="text/x-handlebars-template">
 			<section id="r-exp-view">
-				<div class="row">
+				<div class="row-fluid">
 				<div class="col-xs-1 r--edit-section">
 					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
 				</div>
@@ -116,7 +119,7 @@
 			</div>
 			
 			<section id="r-othexp-view">
-				<div class="row">
+				<div class="row-fluid">
 				<div class="col-xs-1 r--edit-section">
 					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
 				</div>
@@ -136,7 +139,7 @@
 		
 		<script id="r-volunteer" class="r-templates" data-type="volunteer-experience" type="text/x-handlebars-template">
 			<section id="r-volunteer-exp-view">
-				<div class="row">
+				<div class="row-fluid">
 				<div class="col-xs-1 r--edit-section">
 					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
 				</div>
@@ -154,7 +157,7 @@
 		
 		<script id="r-publications" class="r-templates" data-type="publications" type="text/x-handlebars-template">
 			<section id="r-publications-view">
-				<div class="row">
+				<div class="row-fluid">
 				<div class="col-xs-1 r--edit-section">
 					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
 				</div>
@@ -174,7 +177,7 @@
 		
 		<script id="r-education" class="r-templates" data-type="education" type="text/x-handlebars-template">
 			<section id="r-education-view">
-				<div class="row">
+				<div class="row-fluid">
 				<div class="col-xs-1 r--edit-section">
 					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
 				</div>
@@ -208,7 +211,7 @@
 		
 		<script id="r-technical-skills" class="r-templates" data-type="skills" type="text/x-handlebars-template">
 			<section id="r-technical-skills-view">
-				<div class="row">
+				<div class="row-fluid">
 				<div class="col-xs-1 r--edit-section">
 					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
 				</div>

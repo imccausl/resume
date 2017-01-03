@@ -234,7 +234,7 @@
 			menuId = '#' + menuIds[item].id;
 			sectionName = menuIds[item].childNodes[0].nextSibling.childNodes[3].firstElementChild.textContent;
 			
-			fullItem = '<li class="col-xs-6 col-sm-4 col-md-2"><a href="' + menuId + '">' + sectionName + '</a></li>';
+			fullItem = '<li class="col-xs-12"><a href="' + menuId + '">' + sectionName + '</a></li>';
 			
 			$('#r-jump-menu-items').append(fullItem);
 		}
