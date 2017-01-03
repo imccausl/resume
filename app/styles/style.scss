@@ -6,22 +6,41 @@ body {
 
 h3 {
 	font-weight: 700;
+	margin: 0 0 15px 0;
 }
 
 a {
 	transition: all ease-in 250ms;
 }
 
+.container {
+	padding: 0;
+}
+
+.remove-padding {
+	padding: 0;
+}
+
+.bottom-margin {
+	margin-bottom: 15px;
+}
+
 section {
+	position: relative;
+	
 	z-index: 1;
 	pointer-events: none;
+	
+	margin: 0;
+	padding: 0;
+	
 }
 
 section:before {
 	display: block;
 	
 	content: " ";
-	margin-top: -40px;
+	margin-top: -30px;
 	height: 40px;
 	visibility: hidden;
 }
@@ -262,6 +281,18 @@ footer {
 		}
 		
 	}
+}
+
+.r--edit-section {
+		
+	padding: 0;
+	margin: 0;
+	max-width: 33px;
+	
+}
+
+.dev--borders {
+	border: 1px solid red;
 }
 
 #login {

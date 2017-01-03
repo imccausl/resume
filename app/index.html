@@ -27,11 +27,11 @@
 		
 			</header>
 		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
+			<!-- <div class="row">
+				<div class="col-xs-12"> -->
 					<section id="r-body-view" class="text-left"></section>
-				</div>
-			</div>
+			<!--	</div>
+			</div> -->
 		</div><!-- /container -->
 		</div><!-- /#r-view -->
 		
@@ -68,7 +68,7 @@
 			</div>
 			<!-- /FOR PRINTING -->
 				
-			<div id="r-connect" class="btn r-social--button-rounded">
+			<div id="r-connect" class="btn r-social--button-rounded bottom-margin">
 				{{#each socialFeed}}
 				<a id="{{this.service}}" href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
 				{{/each}}
@@ -79,6 +79,13 @@
 		
 		<script id="r-qualifications" class="r-templates" data-type="summary" type="text/x-handlebars-template">
 			<section id="r-qual-view">
+			<div class="row">
+				<div class="col-xs-1 r--edit-section">
+					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
+				</div>
+				
+				<div class="col-xs-11 bottom-margin">
+			
 				{{> sectionHeader}}
 				<ul>
 					{{#each this.content}}
@@ -86,10 +93,17 @@
 					{{/each}}
 				</ul>
 			</section>
+			</div>
 		</script>
 		
 		<script id="r-experience" class="r-templates" data-type="experience" type="text/x-handlebars-template">
 			<section id="r-exp-view">
+				<div class="row">
+				<div class="col-xs-1 r--edit-section">
+					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
+				</div>
+				
+				<div class="col-xs-11 bottom-margin">
 				{{> sectionHeader modifyHeader="Relevant "}}
 				<table>
 					{{#each this.content}}
@@ -98,7 +112,16 @@
 					{{/if}}
 					{{/each}}
 				</table>
+			</section>
+			</div>
+			
+			<section id="r-othexp-view">
+				<div class="row">
+				<div class="col-xs-1 r--edit-section">
+					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
+				</div>
 				
+				<div class="col-xs-11 bottom-margin">
 				{{> sectionHeader modifyHeader="Other "}}
 				<table>
 					{{#each this.content}}
@@ -108,10 +131,17 @@
 					{{/each}}
 				</table>
 			</section>
+			</div>
 		</script>
 		
 		<script id="r-volunteer" class="r-templates" data-type="volunteer-experience" type="text/x-handlebars-template">
 			<section id="r-volunteer-exp-view">
+				<div class="row">
+				<div class="col-xs-1 r--edit-section">
+					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
+				</div>
+				
+				<div class="col-xs-11 bottom-margin">
 				{{> sectionHeader}}
 				<table>
 					{{#each this.content}}
@@ -119,10 +149,17 @@
 					{{/each}}
 				</table>
 			</section>
+			</div>
 		</script>
 		
 		<script id="r-publications" class="r-templates" data-type="publications" type="text/x-handlebars-template">
 			<section id="r-publications-view">
+				<div class="row">
+				<div class="col-xs-1 r--edit-section">
+					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
+				</div>
+				
+				<div class="col-xs-11 bottom-margin">
 				{{> sectionHeader}}
 				<table>
 					<tbody>
@@ -132,10 +169,17 @@
 					</tbody>
 				</table>
 			</section>
+			</div>
 		</script>
 		
 		<script id="r-education" class="r-templates" data-type="education" type="text/x-handlebars-template">
 			<section id="r-education-view">
+				<div class="row">
+				<div class="col-xs-1 r--edit-section">
+					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
+				</div>
+				
+				<div class="col-xs-11 bottom-margin">
 				{{> sectionHeader}}
 				<table>
 					{{#each this.content}}
@@ -159,22 +203,30 @@
 					{{/each}}
 				</table>
 			</section>
+			</div>
 		</script>
 		
 		<script id="r-technical-skills" class="r-templates" data-type="skills" type="text/x-handlebars-template">
 			<section id="r-technical-skills-view">
+				<div class="row">
+				<div class="col-xs-1 r--edit-section">
+					<a id="edit--button" href = "#"><span class="fa fa-edit fa-lg"></span></a>
+				</div>
+				
+				<div class="col-xs-11 bottom-margin">
 				{{> sectionHeader}}
 				{{#each this.content}}
 				<p><strong class="text-capitalize">{{this.category}}</strong>: {{this.skills}}</p>
 				{{/each}}
 			</section>
+			</div>
 		</script>
 		
 		<script id="r-experience-partial" type="text/x-handlebars-template">
 			<tr>
 						<td style="width:20%;">{{this.start}}-{{this.end}}</td>
 						<th style="width:65%;">{{this.position}}, {{this.company}}</th>
-						<td style="width:15%;">{{this.location}}</td>
+						<td style="width:15%;" class="text-right">{{this.location}}</td>
 					</tr>
 					{{#if this.highlights}}
 					<tr>

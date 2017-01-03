@@ -205,8 +205,14 @@
 			
 			restore: function restore() {
 				
+			},
+			
+			component: {
+				view: '<span class="fa fa-edit"></span>',
 			}
 		},
+		
+		
 		
 		init: function init () {
 			
@@ -220,14 +226,15 @@
 	
 	function buildMenu() {
 		console.log('Building the menu!');
-		var menuIds = helpers.getResumeSections(), item = 1, menuId, fullItem, testIds = [];
+		var menuIds = helpers.getResumeSections(), item = 1, menuId, fullItem, sectionName = "";
 		
 		console.log(menuIds);
 		
 		for(; item < menuIds.length; item++){
 			menuId = '#' + menuIds[item].id;
-			fullItem = '<li class="col-xs-6 col-sm-4 col-md-2"><a href="' + menuId + '">' + menuIds[item].children[0].textContent + '</a></li>';
-			testIds.push(menuId); // for testing purposes
+			sectionName = menuIds[item].childNodes[0].nextSibling.childNodes[3].firstElementChild.textContent;
+			
+			fullItem = '<li class="col-xs-6 col-sm-4 col-md-2"><a href="' + menuId + '">' + sectionName + '</a></li>';
 			
 			$('#r-jump-menu-items').append(fullItem);
 		}
