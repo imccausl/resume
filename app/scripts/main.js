@@ -1,6 +1,8 @@
 'use strict';
 
-(function (document) {
+var App = Ember.Application.create();
+
+(function (document, $) {
 	var helpers = {
 		convertDataTypeName: function convertDataTypeName( typeName ) {
 			var temp = [];
@@ -20,6 +22,19 @@
 			var sections = document.getElementsByTagName('section');
 									
 			return sections;
+		},
+		
+		convertMonth: function convertMonth(data) {
+			console.log("Convert month:", data);
+			data = data.split('/');
+			data.reverse();
+			data = data.join('-');
+			
+			console.log("Month converted:", data);
+			
+			
+			return data;
+			
 		}
 	}
 	
@@ -28,7 +43,7 @@
 		resume: {},
 		header: {},
 		templates: [],
-		sectionHeaders: '<h3 class="text-capitalize">{{modifyHeader}}{{this.title}}</h3>',
+		sectionHeaders: '<h3 class="text-capitalize">{{modifyHeader}}{{> editBoxInterface}}{{this.title}}{{> endEditingInterface}}</h3>',
 		navMenu: {
 			open: 'fa-chevron-down',
 			close: 'fa-chevron-up'
@@ -70,29 +85,46 @@
 			model.resume.experience.content = view.sortData(model.resume.experience.content, 'start');
 			model.resume.volunteerExperience.content = view.sortData(model.resume.volunteerExperience.content, 'start');
 			
+
+			Handlebars.registerHelper('correctDate', function(date) {
+				return helpers.convertMonth(date)
+			});
+			
 			// register resusable section header partial
 			Handlebars.registerPartial('sectionHeader', model.sectionHeaders);
-
+			
+			// register reusuable editing interface partial
+			Handlebars.registerPartial('editingInterface', admin.editMode.component.view);
+			Handlebars.registerPartial('endEditingInterface', admin.editMode.component.endView);
+			Handlebars.registerPartial('editBoxInterface', admin.editMode.component.editBoxView);
+			Handlebars.registerPartial('optionsBar', admin.editMode.component.optionsBar);
+			
 			//register reusable experience section partial
 			//to use with both relevant and other professional experience sections
 			partialSource = $('#r-experience-partial').html();
 			Handlebars.registerPartial('experiencePartial', partialSource);
 
+
 			// TEMPORARY PLACEMENT OF CODE TO BUILD NAV MENU PARTIAL FOR TESTING AND DEV PURPOSES
 			console.log('Registering nav menu template partial!');
 			
+
 			partialSource = $('#r-nav-template').html();
 			Handlebars.registerPartial('navMenu', partialSource);
+
 			
 			// put the current year in the copyright date in footer.
 			console.log('Putting current year in the footer', copyright.getFullYear() + '!');
 			$('#r-copyright').html(copyright.getFullYear());
 			
-			app.getTemplateHTML(); // get the template HTML and store it in the model.
+ 			app.getTemplateHTML(); // get the template HTML and store it in the model.
 			console.log("model.resume.info", model.resume.info);
+			
+
 			app.buildHeader(model.resume.info); //builds the site header		
 			app.buildResume(); // compile the templates and insert the data from the model into them.
 			app.buildFooter(model.resume.info.socialFeed);
+
 			
 			//FOR TESTING PURPOSES
 			buildMenu();
@@ -208,15 +240,35 @@
 			},
 			
 			component: {
-				view: '<span class="fa fa-edit"></span>',
+				view: '<div class="row-fluid"><div class="col-xs-12 box-margin edit-mode--borders">',
+				endView: '</div>',
+				editBoxView: '<div class="edit-mode--active" contenteditable="true">',
+				optionsBar: '<div class="options-bar" contenteditable="false"><button type="button" class="edit-options btn btn-sm"><span class="fa fa-plus-circle fa-lg"></span></button><button type="button" class="edit-options btn btn-sm"><span class="fa fa-minus-circle fa-lg"></span></button></div>'
 			}
 		},
 		
 		
 		
 		init: function init () {
-			
+			console.log("Initializing admin mode!");
+				
+				$('.r--edit-section').on('click', function(evnt) {
+					var editActive = $('.edit-mode').hasClass('edit-mode--active');
+					
+					evnt.preventDefault();
+					
+					console.log(evnt);
+					
+					if (editActive) {
+						$('.edit-mode').removeClass('edit-mode--active');
+					} else {
+						$('.edit-mode').addClass('edit-mode--active');
+					}
+				});					
+					
+				
 			// add edit buttons to interface
+			//$('.r--edit-section').addClass('.edit-section--active');
 			helpers.getResumeSections();
 			
 		}
@@ -232,7 +284,9 @@
 		
 		for(; item < menuIds.length; item++){
 			menuId = '#' + menuIds[item].id;
-			sectionName = menuIds[item].childNodes[0].nextSibling.childNodes[3].firstElementChild.textContent;
+			sectionName = menuIds[item].childNodes[0].nextElementSibling.firstElementChild.firstElementChild.textContent;
+			
+			console.log("section name:", sectionName);
 			
 			fullItem = '<li class="col-xs-12"><a href="' + menuId + '">' + sectionName + '</a></li>';
 			
@@ -243,6 +297,7 @@
 	
 	//start it up!
 	app.init();
+	admin.init(); //initialize admin mode for building the admin interface
 	
 	/* temporary placement of test items for resume navigation */
 	
@@ -264,6 +319,10 @@
 			
 	}
 	
+	function testSave() {
+		console.log(model.templates);
+	}
+	
 	function addClickListeners() {
 		
 		// click listener
@@ -276,8 +335,13 @@
 		
 		$('#login').on('click', function(e) {
 			e.preventDefault();
-			admin.init();
+			console.log("Hello?");
+			//admin.init();
 		})
+		
+		$('#edit-mode--save-button').on('click', function(e) {
+			testSave();
+		});
 		
 		$(document).on('click', function(e) {
 			// navMenuClicked('close');
@@ -285,5 +349,5 @@
 	}		
 	/* END temporary placement */
 	
-})(document);
+})(document, jQuery);
 //# sourceMappingURL=main.js.map

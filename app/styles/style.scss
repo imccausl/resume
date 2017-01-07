@@ -1,6 +1,14 @@
+input, span {
+	padding: 0;
+	margin: 0;
+}
+
 body {
 	font-family: "Old Standard TT", Georgia, "Times New Roman", serif; 
 	font-size: 16px;
+	
+	padding-top: 60px;
+	
 	z-index: 10;
 }
 
@@ -21,15 +29,15 @@ a {
 	padding: 0;
 }
 
-.bottom-margin {
-	margin-bottom: 15px;
+.box-margin {
+	margin: 0 0 15px 0;
 }
 
 section {
 	position: relative;
 	
-	z-index: 1;
-	pointer-events: none;
+	/* z-index: 1;
+	pointer-events: none; */
 	
 	margin: 0;
 	padding: 0;
@@ -153,11 +161,11 @@ footer {
 	}
 	
 	#r-contact {
-		display: none;
+		display: block;
 		background-color: lighten(#000, 93.5%);
 		
-		border-radius: 4px;
-				
+		width: 100%;
+						
 		padding: 15px;
 		margin: 10px;
 		
@@ -182,13 +190,21 @@ footer {
 		
 		tr {
 			td, th {
-				vertical-align: top;
+				vertical-align: middle;
 			}
 		}
 	}
 	
 	ul {
-		padding-left: 18px; 
+		padding-left: 18px;
+		
+		margin-top: 10px;
+		
+		li {
+			list-style-position: outside;
+			padding: 0;
+		}
+		
 	}
 
 }
@@ -283,17 +299,93 @@ footer {
 	}
 }
 
-.r--edit-section {
-		
+.r--edit-section {		
 	padding: 0;
 	margin: 0;
 	min-width: 33px;
 	
+	z-index: 10;
+	pointer-events: auto;
+
+	
 	#edit--button {
 		display: inline-block;
 		padding: 3px 10px;
+		
 	}
 	
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	
+}
+
+.small {
+	display: inline-block;
+	width: 160px;
+}
+
+.edit-mode--active {
+	display: inline-block;
+	
+	margin: 0;
+	padding: 5px 3px;
+	
+	z-index: 10;
+	pointer-events: auto;
+}
+
+.edit-mode--borders {
+	display: block;
+	border: 1px dotted lighten(#000, 63.5%);
+	
+	padding: 5px 10px;
+	margin: 10px;
+}
+
+.edit-mode {
+	position: relative;
+	padding-top: 40px;
+}
+
+.display-mode--hide {
+	display: none;
+}
+
+.edit-mode--nav {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
+}
+
+.edit-mode--ui {
+	padding-right: 10px;
+	
+	button {
+		margin-right: 5px;
+	}
+}
+
+.edit-options {
+	background: none;
+}
+
+#edu-year--edit-mode {
+	width: 70px;
+	margin-bottom: 10px;
+}
+
+.options-bar {
+	position: absolute;
+	
+	top: 0;
+	right: 0;
+	
+	width: 75px;
+	text-align: center;
+	
+	background: lighten(#000, 83.5%);
 }
 
 .dev--borders {
