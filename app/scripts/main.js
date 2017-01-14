@@ -13,7 +13,7 @@ var App = Ember.Application.create();
 				typeName[i] = typeName[i].replace(typeName[i].charAt(0), typeName[i].charAt(0).toUpperCase());
 			}			
 			
-			typeName = typeName.join("");
+			typeName = typeName.join('');
 			
 			return typeName;
 		},
@@ -25,12 +25,12 @@ var App = Ember.Application.create();
 		},
 		
 		convertMonth: function convertMonth(data) {
-			console.log("Convert month:", data);
+			console.log('Convert month:', data);
 			data = data.split('/');
 			data.reverse();
 			data = data.join('-');
 			
-			console.log("Month converted:", data);
+			console.log('Month converted:', data);
 			
 			
 			return data;
@@ -39,7 +39,7 @@ var App = Ember.Application.create();
 	}
 	
 	var model = {
-		path: "http://localhost:8000/api/resume",
+		path: 'http://localhost:8000/api/resume',
 		resume: {},
 		header: {},
 		templates: [],
@@ -118,7 +118,7 @@ var App = Ember.Application.create();
 			$('#r-copyright').html(copyright.getFullYear());
 			
  			app.getTemplateHTML(); // get the template HTML and store it in the model.
-			console.log("model.resume.info", model.resume.info);
+			console.log('model.resume.info', model.resume.info);
 			
 
 			app.buildHeader(model.resume.info); //builds the site header		
@@ -250,7 +250,7 @@ var App = Ember.Application.create();
 		
 		
 		init: function init () {
-			console.log("Initializing admin mode!");
+			console.log('Initializing admin mode!');
 				
 				$('.r--edit-section').on('click', function(evnt) {
 					var editActive = $('.edit-mode').hasClass('edit-mode--active');
@@ -278,7 +278,7 @@ var App = Ember.Application.create();
 	
 	function buildMenu() {
 		console.log('Building the menu!');
-		var menuIds = helpers.getResumeSections(), item = 1, menuId, fullItem, sectionName = "";
+		var menuIds = helpers.getResumeSections(), item = 1, menuId, fullItem, sectionName = '';
 		
 		console.log(menuIds);
 		
@@ -286,7 +286,7 @@ var App = Ember.Application.create();
 			menuId = '#' + menuIds[item].id;
 			sectionName = menuIds[item].childNodes[0].nextElementSibling.firstElementChild.firstElementChild.textContent;
 			
-			console.log("section name:", sectionName);
+			console.log('section name:', sectionName);
 			
 			fullItem = '<li class="col-xs-12"><a href="' + menuId + '">' + sectionName + '</a></li>';
 			
@@ -335,7 +335,7 @@ var App = Ember.Application.create();
 		
 		$('#login').on('click', function(e) {
 			e.preventDefault();
-			console.log("Hello?");
+			console.log('Hello?');
 			//admin.init();
 		})
 		
