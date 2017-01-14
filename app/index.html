@@ -5,367 +5,193 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- Framework stylesheets / Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|VT323|Share+Tech+Mono" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|Roboto+Mono:400|Raleway:400" rel="stylesheet">
 		<!-- build:css styles/main.css -->
 		<!-- bower:css -->
 		<!-- endbower -->
-		<link rel="stylesheet" href="styles/main.css">
-		<!-- endbuild -->
 		
-		<!-- build:css styles/style.css -->
 		<!-- Custom stylesheets -->
+		<link rel="stylesheet" href="styles/main.css">
 		<link rel="stylesheet" href="styles/style.css">
 		<!-- endbuild -->
 		
-		<title>Ian R. McCausland | Resume</title>
+		<title>Ian R. McCausland | Web Developer | Resume</title>
 	</head>
 
 	<body>
-		
-		{{outlet}}
 		<!-- Main Page -->
+		<div id="r-view top">
+			<header id="r-header-view" class="text-center">
 		
-	<script type="text/x-handlebars">
-	<div id="r-view top">
-		<header id="r-header-view" class="text-center">
-			{{header}}
-		</header>
-	
-		<nav class="navbar navbar-default edit-mode--nav navbar-fixed-top">
-		<div class="container-fluid">	
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" 
-							class="navbar-toggle collapsed" 
-							data-toggle="collapse" 
-							data-target="#bs-example-navbar-collapse-1" 
-							aria-expanded="false">
-							
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-					        <span class="icon-bar"></span>
-					        <span class="icon-bar"></span>
-					</button>
-					
-				<a class="navbar-brand" href="#"></a>
-	    	</div>
-	
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Edit <span class="sr-only">(current)</span></a></li>
-					<li><a href="#">Preview</a></li>
-	      		</ul>
-	      
-		  		<ul class="nav navbar-nav navbar-right edit-mode--ui">
-		  			<li><button class="navbar-btn btn btn-default">Cancel</button></li>
-		  			<li><button id="edit-mode--save-button" class="navbar-btn btn btn-primary">Save</button></li>
-		  			<li><button class="navbar-btn btn btn-default"><span class="fa fa-power-off fa-lg"></span></button></li>
-	      		</ul>
-	    	</div><!-- /.navbar-collapse -->
-	  	</div><!-- /.container-fluid -->
-		</nav>			
-				
-		<div class="container-fluid">
-			<!-- <div class="row">
-				<div class="col-xs-12"> -->
-					<section id="r-body-view" class="text-left">{{outlet}}</section>
-			<!-- </div>
-			</div> -->
+			</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<section id="r-body-view" class="text-left"></section>
+				</div>
+			</div>
 		</div><!-- /container -->
 		</div><!-- /#r-view -->
-			
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<ul id="r-footer-menu" class="text-center">
-							<li><a href="#top"><span class="fa fa-arrow-up fa-lg"></span></a></li><li class="sr-only">Back to the Top</li>
-						</ul>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div id="r-footer--socialview" class="text-center"></div>
-					
-					<p class="text-center footer--default-font">© <span id="r-copyright"></span> 
-						<a href="#" id="login">Ian McCausland</a>. All Rights Reserved.</p>
-				</div>
-							
-		</footer>
-	</script>
-<!-- ENDOF Main Page -->
 		
-<!-- Templates -->
-	<script id="r-header" data-type="header" data-template-name="header" type="text/x-handlebars">
-		<div class="container-fluid">
-			{{> editingInterface}}
+		<footer>
+			
+			
+		</footer>
+		<!-- ENDOF Main Page -->
+		
+		<!-- Templates -->
+		<script id="r-header" type="text/x-handlebars-template">
 			<img class="img-small" src="{{img}}" alt="biographical image">
 						
-			<h1>{{> editBoxInterface}}{{fullName}}{{> endEditingInterface}}*</h1>
+			<h1>{{fullName}}</h1>
+			<h2 class="text-capitalize">{{description}}</h2>
+			<h2 class="text-capitalize">{{city}}, {{province}}</h2>
 			
-			<h2 class="text-capitalize">
-				{{> editBoxInterface}}{{description}}{{> endEditingInterface}}*
-			</h2>
 			
-			<h2 class="text-capitalize">
-				{{> editBoxInterface}}{{addr}}{{> endEditingInterface}}
-			</h2>
-			
-			<h2 class="text-capitalize">
-				{{> editBoxInterface}}{{city}}{{> endEditingInterface}}, {{> editBoxInterface}}{{province}}{{> endEditingInterface}}*
-			</h2>
-			
-			<!-- FOR PRINT VERSION ONLY -->
-			<div id="r-contact">
-				<span class="fa fa-lg fa-mobile-phone "></span> 
-				<h4>{{> editBoxInterface}}{{contact.phone}}{{> endEditingInterface}}</h4> | 
-				<span class="fa fa-envelope-o"></span> 
-				<h4>{{> editBoxInterface}}{{contact.email}}{{> endEditingInterface}}</h4>
-			</div>
-			<!-- /FOR PRINT VERSION ONLY -->
-				
-			<div id="r-connect" class="btn r-social--button-rounded bottom-margin">
+			<div id="r-connect" class="btn btn-info">
 				{{#each socialFeed}}
-				<a id="{{this.service}}" href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
+				<a href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
 				{{/each}}
 			</div>
-			{{> endEditingInterface}}
-		</div>
-		
-		{{> navMenu}}
 			
-	</script>
-		
-	<script id="r-qualifications" class="r-templates" data-type="summary" type="text/x-handlebars">
-		<section id="r-qual-view">
-				
-			{{> editingInterface}}
-			{{> sectionHeader}}
-				
-			<ul>
-				{{#each this.content}}
-				<li>
-					<div class="edit-mode edit-mode--borders">{{>optionsBar}}{{> editBoxInterface}}{{this}}.{{> endEditingInterface}}</div>
-				</li>
-				{{/each}}
-			</ul>
+			{{> navMenu}}
 			
-			{{> endEditingInterface}}
-				
-		</section>
-	</script>
+		</script>
 		
-	<script id="r-experience" class="r-templates" data-template-name="experience" data-type="experience" type="text/x-handlebars">
-		<section id="r-exp-view">
-			{{> editingInterface}}
-				
-			{{> sectionHeader modifyHeader="Relevant "}}
-				
-				{{#each this.content}}
-					
-					{{#if this.relevant}}
-					
-						{{> experiencePartial}}
-						
-					{{/if}}
-					
-				{{/each}}
-				
-			{{> endEditingInterface}}
-		</section>
-			
-		<section id="r-othexp-view">
-			{{> editingInterface}}
-				
-			{{> sectionHeader modifyHeader="Other "}}
-				
-			{{#each this.content}}
-				{{#unless this.relevant}}
-					{{> experiencePartial}}
-				{{/unless}}
-			{{/each}}
-				
-				
-			{{> endEditingInterface}}
-		</section>
-	</script>
-		
-		<script id="r-volunteer" class="r-templates" data-template-name="volunteer-experience" data-type="volunteer-experience" type="text/x-handlebars">
-		
-		<section id="r-volunteer-exp-view">
-			{{> editingInterface}}
-			{{> sectionHeader}}
-				
-				{{#each this.content}}
-					{{> experiencePartial}}
-				{{/each}}
-				
-			{{>endEditingInterface}}
-		</section>
-	</script>
-		
-	<script id="r-publications" class="r-templates" data-template-name="publications" data-type="publications" type="text/x-handlebars">
-		<section id="r-publications-view">
-			{{> editingInterface}}
-				
-			{{> sectionHeader}}
-			<table>
-				<tbody>
+		<script id="r-qualifications" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-qual-view">
+				{{> sectionHeader}}
+				<ul>
 					{{#each this.content}}
-					<tr><td>
-						<div class="edit-mode edit-mode--borders">
-						{{> optionsBar}}{{> editBoxInterface}}&ldquo;{{{this.title}}}&rdquo; in {{{this.citation}}}{{> endEditingInterface}}
-						</div></td></tr>
+					<li>{{this}}.</li>
 					{{/each}}
-				</tbody>
-			</table>
-			{{> endEditingInterface}}
-		</section>
-	</script>
+				</ul>
+			</section>
+		</script>
 		
-	<script id="r-education" class="r-templates" data-template-name="education" data-type="education" type="text/x-handlebars">
-		<section id="r-education-view">
-			{{> editingInterface}}
-			{{> sectionHeader}}
-					
-			{{#each this.content}}
-			<div class="edit-mode edit-mode--borders">
-				{{> optionsBar}}
+		<script id="r-experience" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-exp-view">
+				{{> sectionHeader modifyHeader="Relevant "}}
+				<table>
+					{{#each this.content}}
+					{{#if this.relevant}}
+						{{> experiencePartial}}
+					{{/if}}
+					{{/each}}
+				</table>
+				
+				{{> sectionHeader modifyHeader="Other "}}
+				<table>
+					{{#each this.content}}
+					{{#unless this.relevant}}
+						{{> experiencePartial}}
+					{{/unless}}
+					{{/each}}
+				</table>
+			</section>
+		</script>
+		
+		<script id="r-volunteer" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-volunteer-exp-view">
+				{{> sectionHeader}}
+				<table>
+					{{#each this.content}}
+						{{> experiencePartial}}
+					{{/each}}
+				</table>
+			</section>
+		</script>
+		
+		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-publications-view">
+				{{> sectionHeader}}
 				<table>
 					<tbody>
-						<tr>
-							<td style="width:10%;">{{> editBoxInterface}}{{this.year}}{{> endEditingInterface}}</td></td>
-							<td style="width:90%;">{{> editBoxInterface}}{{this.degree}}{{> endEditingInterface}},
-								<strong> {{> editBoxInterface}}{{this.program}}{{> endEditingInterface}}</strong>,
-										 {{> editBoxInterface}}{{this.institution}}{{> endEditingInterface}}, {{> editBoxInterface}}												 {{this.location}}{{> endEditingInterface}} 
-										 {{#unless this.completed}}
-										 	({{> editBoxInterface}}{{this.notes}}{{> endEditingInterface}})
-										 {{/unless}}
-							</td>
-						</tr>
+						{{#each this.content}}
+						<tr><td>&ldquo;{{{this.title}}}&rdquo; in {{{this.citation}}}</td></tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</section>
+		</script>
+		
+		<script id="r-education" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-education-view">
+				{{> sectionHeader}}
+				<table>
+					{{#each this.content}}
+					<tr>
+						<td style="width:15%;">{{this.year}}</td>
+						<td style="width:85%;">{{this.degree}},
+						<strong> {{this.program}}</strong>,
+						{{this.institution}}, {{this.location}} {{#unless this.completed}}({{this.notes}}){{/unless}}</td>
+					</tr>
 					
 					{{#each this.awards}}
 					{{#if this}}
-					
 					<tr>
 						<td></td>	
 						<ul>
-							<td><li><div class="edit-mode edit-mode--borders">
-							{{> optionsBar}}<em>Awarded a {{> editBoxInterface}}{{this}}{{> endEditingInterface}}</em></div></li></td>
+							<td><li><em>Awarded a {{this}}</em></li></td>
 						</ul>
 					</tr>
-				
-					
 					{{/if}}
 					{{/each}}
-					</tbody>
+					{{/each}}
 				</table>
-			</div>
-			{{/each}}
-				
-			{{> endEditingInterface}}
-		</section>
-	</script>
+			</section>
+		</script>
 		
-	<script id="r-technical-skills" class="r-templates" data-template-name="skills" data-type="skills" type="text/x-handlebars">
-		<section id="r-technical-skills-view">
-			{{> editingInterface}}
-				
-			{{> sectionHeader}}
-			{{#each this.content}}
-				<div class="edit-mode edit-mode--borders">{{> optionsBar}}<p><strong class="text-capitalize">{{> editBoxInterface}}{{this.category}}{{> endEditingInterface}}</strong>: {{> editBoxInterface}}{{this.skills}}{{> endEditingInterface}}</p></div>
-			{{/each}}
-			{{>endEditingInterface}}
-		</section>
-	</script>
+		<script id="r-technical-skills" class="r-templates" type="text/x-handlebars-template">
+			<section id="r-technical-skills-view">
+				{{> sectionHeader}}
+				{{#each this.content}}
+				<p><strong class="text-capitalize">{{@key}}</strong>: {{this}}</p>
+				{{/each}}
+			</section>
+		</script>
 		
-	<script id="r-experience-partial" type="text/x-handlebars" data-template-name="exp-partial">
+		<script id="r-experience-partial" type="text/x-handlebars-template">
+			<tr>
+						<td style="width:20%;">{{this.start}}-{{this.end}}</td>
+						<th style="width:65%;">{{this.position}}, {{this.company}}</th>
+						<td style="width:15%;">{{this.location}}</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<ul>
+								{{#each this.highlights}}
+								<li>{{this}}.</li>
+								{{/each}}
+							</ul>
+						</td>
+					</tr>
+		</script>
 		
-		<div class="edit-mode edit-mode--borders">
-		{{> optionsBar}}
-		<table>
-			<tbody>
+		<script id="r-nav-template" type="text/x-handlebars-template">
 			
-				<tr>
-					<td>
-						<input id="date-start--edit-mode" class="edit-mode--active small" type="month" value="{{correctDate this.start}}">
-						<span class="display-mode--hide">{{this.start}}</span></input> 
-							to 
-							<input id="date-end--edit-mode" class="edit-mode--active small" type="month" value="{{correctDate this.end}}">
-							<span class="display-mode--hide">{{this.end}}</span></input>
-					</td>
-				
-					<th>{{> editBoxInterface}}{{this.position}}{{> endEditingInterface}}, 
-						{{> editBoxInterface}}{{this.company}}{{> endEditingInterface}}
-					</th>
-				
-					<td class="text-right">{{> editBoxInterface}}{{this.location}}{{> endEditingInterface}}</td>
-			
-				</tr>
-			
-				{{#if this.highlights}}
-				<tr>
-					<td colspan="3" style="width:60%;">
-						<ul>
-							{{#each this.highlights}}
-							<li><div class="edit-mode edit-mode--borders">{{> optionsBar}}{{> editBoxInterface}}{{{this}}}.{{endEditingInterface}}</div></li>
-							{{/each}}
-						</ul>
-					</td>
-				</tr>
-				{{/if}}
-		
-			</tbody>
-		</table>
-		</div>
-	</script>
-		
-	<script id="r-nav-template" type="text/x-handlebars" data-template-name="nav-template">
-			
-		<nav class="r-nav text-center display-mode--hide" id="r-fixed-menu" data-spy="affix" data-offset-top="350">
-			<div id="r-jump-menu" class="text-center">
-				<div class="container-fluid">
-					<ul class="row clearfix" id="r-jump-menu-items"></ul>
+			<nav class="r-nav text-center" id="r-fixed-menu" data-spy="affix" data-offset-top="420">
+				<div id="r-jump-menu" class="text-center">
+					<ul id="r-jump-menu-items"><li><a href="#top" class="jump-active">{{fullName}}</a></li></ul>
 				</div>
-			</div>
 				
-			<a id="r-nav-menu" href="#" class="btn btn-default">
-				<span id="r-nav-icon" class="fa fa-chevron-down"></span>
-			</a>	
+				<a id="r-nav-menu" href="#" class="btn btn-default">
+					 <span id="r-nav-icon" class="fa fa-chevron-down"></span>
+				</a>	
 				
-		</nav>
+			</nav>
 			
-	</script>
+		</script>
 		
-	<script id="r-footer--social" type="text/x-handlebars" data-template-name="social-footer">
-		{{#each this}}
-		<a id="{{this.service}}" href="{{this.url}}" target="_blank">
-			<span class="r-social fa fa-3x fa-{{this.service}}"></span>
-		</a>
-		{{/each}}
-	</script>
-			
-	<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
-	<!-- build:js scripts/libraries.js -->
-	<!-- bower:js -->
-	<script src="/bower_components/jquery/dist/jquery.js"></script>
-	<script src="/bower_components/modernizr/modernizr.js"></script>
-	<script src="/bower_components/handlebars/handlebars.js"></script>
-	<script src="/bower_components/ember/ember.debug.js"></script>
-	<script src="/bower_components/ember-data/ember-data.js"></script>
-	<!-- endbower -->
-	<!-- endbuild -->
-	<!-- build:js scripts/main.js -->
 	
-
-	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-	
-	<script src="scripts/main.js"></script>
-	
-	<!-- endbuild -->
-	
+		<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
+		<!-- build:js scripts/libraries.js -->
+		<!-- bower:js -->
+		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/modernizr/modernizr.js"></script>
+		<script src="/bower_components/handlebars/handlebars.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+		<script src="scripts/main.js"></script>
 	</body>
 </html>
