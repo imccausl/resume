@@ -1,7 +1,5 @@
 'use strict';
 
-var App = Ember.Application.create();
-
 (function (document, $) {
 	var helpers = {
 		convertDataTypeName: function convertDataTypeName( typeName ) {
@@ -39,7 +37,7 @@ var App = Ember.Application.create();
 	}
 	
 	var model = {
-		path: 'http://localhost:8000/api/resume',
+		path: '../resume.json',
 		resume: {},
 		header: {},
 		templates: [],
