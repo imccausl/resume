@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- Framework stylesheets / Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|Roboto+Mono:400|Raleway:400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|VT323|Share+Tech+Mono" rel="stylesheet">
 		<!-- build:css styles/main.css -->
 		<!-- bower:css -->
 		<!-- endbower -->
@@ -34,7 +34,20 @@
 		</div><!-- /#r-view -->
 		
 		<footer>
-			
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-sm-12">
+						<ul id="r-footer-menu" class="text-center">
+							<li><a href="#top"><span class="fa fa-arrow-up fa-lg"></span></a></li>
+							<li class="sr-only">Back to the Top</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div id="r-footer--socialview" class="text-center"></div>
+					<p class="text-center copyright">© <span id="r-copyright"></span> Ian McCausland. All Rights Reserved.</p></div>
+				</div>
 			
 		</footer>
 		<!-- ENDOF Main Page -->
@@ -58,7 +71,7 @@
 			
 		</script>
 		
-		<script id="r-qualifications" class="r-templates" type="text/x-handlebars-template">
+		<script id="r-qualifications" data-type="summary" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-qual-view">
 				{{> sectionHeader}}
 				<ul>
@@ -69,7 +82,7 @@
 			</section>
 		</script>
 		
-		<script id="r-experience" class="r-templates" type="text/x-handlebars-template">
+		<script id="r-experience" data-type="experience" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-exp-view">
 				{{> sectionHeader modifyHeader="Relevant "}}
 				<table>
@@ -91,7 +104,7 @@
 			</section>
 		</script>
 		
-		<script id="r-volunteer" class="r-templates" type="text/x-handlebars-template">
+		<script id="r-volunteer" data-type="volunteer-experience" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-volunteer-exp-view">
 				{{> sectionHeader}}
 				<table>
@@ -102,7 +115,7 @@
 			</section>
 		</script>
 		
-		<script id="r-publications" class="r-templates" type="text/x-handlebars-template">
+		<script id="r-publications" data-type="publications" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-publications-view">
 				{{> sectionHeader}}
 				<table>
@@ -115,7 +128,7 @@
 			</section>
 		</script>
 		
-		<script id="r-education" class="r-templates" type="text/x-handlebars-template">
+		<script id="r-education" data-type="education" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-education-view">
 				{{> sectionHeader}}
 				<table>
@@ -142,11 +155,11 @@
 			</section>
 		</script>
 		
-		<script id="r-technical-skills" class="r-templates" type="text/x-handlebars-template">
+		<script id="r-technical-skills" data-type="skills" class="r-templates" type="text/x-handlebars-template">
 			<section id="r-technical-skills-view">
 				{{> sectionHeader}}
 				{{#each this.content}}
-				<p><strong class="text-capitalize">{{@key}}</strong>: {{this}}</p>
+				<p><strong class="text-capitalize">{{category}}</strong>: {{skills}}</p>
 				{{/each}}
 			</section>
 		</script>
@@ -167,6 +180,12 @@
 						</td>
 					</tr>
 		</script>
+		
+		</script><script id="r-footer--social" type="text/x-handlebars-template">{{#each this}}
+			<a id="{{this.service}}" href="{{this.url}}" target="_blank">
+				<span class="r-social fa fa-3x fa-{{this.service}}"></span>
+			</a>
+			{{/each}}</script>
 		
 		<script id="r-nav-template" type="text/x-handlebars-template">
 			
@@ -190,6 +209,8 @@
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
 		<script src="/bower_components/modernizr/modernizr.js"></script>
 		<script src="/bower_components/handlebars/handlebars.js"></script>
+		<script src="/bower_components/ember/ember.debug.js"></script>
+		<script src="/bower_components/ember-data/ember-data.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 		<script src="scripts/main.js"></script>

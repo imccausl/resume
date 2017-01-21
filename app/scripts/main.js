@@ -37,11 +37,11 @@
 	}
 	
 	var model = {
-		path: '../resume.json',
+		path: 'http://api.ianmccausland.xyz:8080/v1/resumes?auth_key=devtest',
 		resume: {},
 		header: {},
 		templates: [],
-		sectionHeaders: '<h3 class="text-capitalize">{{modifyHeader}}{{> editBoxInterface}}{{this.title}}{{> endEditingInterface}}</h3>',
+		sectionHeaders: '<h3 class="text-capitalize">{{modifyHeader}}{{this.title}}</h3>',
 		navMenu: {
 			open: 'fa-chevron-down',
 			close: 'fa-chevron-up'
@@ -83,20 +83,9 @@
 			model.resume.experience.content = view.sortData(model.resume.experience.content, 'start');
 			model.resume.volunteerExperience.content = view.sortData(model.resume.volunteerExperience.content, 'start');
 			
-
-			Handlebars.registerHelper('correctDate', function(date) {
-				return helpers.convertMonth(date)
-			});
-			
 			// register resusable section header partial
 			Handlebars.registerPartial('sectionHeader', model.sectionHeaders);
-			
-			// register reusuable editing interface partial
-			Handlebars.registerPartial('editingInterface', admin.editMode.component.view);
-			Handlebars.registerPartial('endEditingInterface', admin.editMode.component.endView);
-			Handlebars.registerPartial('editBoxInterface', admin.editMode.component.editBoxView);
-			Handlebars.registerPartial('optionsBar', admin.editMode.component.optionsBar);
-			
+						
 			//register reusable experience section partial
 			//to use with both relevant and other professional experience sections
 			partialSource = $('#r-experience-partial').html();
@@ -118,7 +107,8 @@
  			app.getTemplateHTML(); // get the template HTML and store it in the model.
 			console.log('model.resume.info', model.resume.info);
 			
-
+			model.resume.info.img = './images/bio.jpg';
+			
 			app.buildHeader(model.resume.info); //builds the site header		
 			app.buildResume(); // compile the templates and insert the data from the model into them.
 			app.buildFooter(model.resume.info.socialFeed);
@@ -145,7 +135,7 @@
 				// ... and then, if the load was successful, parsing the JSON data and storing it in the model
 				
 				model.resume = JSON.parse(response)[0];
-				console.log(model.resume);
+				console.log(JSON.parse(response)[0]);
 			}).then(function (response) {
 				// since parsing was successful, start initializing the view
 				
@@ -219,58 +209,7 @@
 		}
 	};
 	
-	var admin = {
-		editMode: {
-			start: function start() {
-				
-			},
-			
-			stop: function stop() {
-				
-			},
-			
-			save: function save() {
-				
-			},
-			
-			restore: function restore() {
-				
-			},
-			
-			component: {
-				view: '<div class="row-fluid"><div class="col-xs-12 box-margin edit-mode--borders">',
-				endView: '</div>',
-				editBoxView: '<div class="edit-mode--active" contenteditable="true">',
-				optionsBar: '<div class="options-bar" contenteditable="false"><button type="button" class="edit-options btn btn-sm"><span class="fa fa-plus-circle fa-lg"></span></button><button type="button" class="edit-options btn btn-sm"><span class="fa fa-minus-circle fa-lg"></span></button></div>'
-			}
-		},
-		
-		
-		
-		init: function init () {
-			console.log('Initializing admin mode!');
-				
-				$('.r--edit-section').on('click', function(evnt) {
-					var editActive = $('.edit-mode').hasClass('edit-mode--active');
-					
-					evnt.preventDefault();
-					
-					console.log(evnt);
-					
-					if (editActive) {
-						$('.edit-mode').removeClass('edit-mode--active');
-					} else {
-						$('.edit-mode').addClass('edit-mode--active');
-					}
-				});					
-					
-				
-			// add edit buttons to interface
-			//$('.r--edit-section').addClass('.edit-section--active');
-			helpers.getResumeSections();
-			
-		}
-	};
+	
 	
 	// menu builder
 	
@@ -282,8 +221,8 @@
 		
 		for(; item < menuIds.length; item++){
 			menuId = '#' + menuIds[item].id;
-			sectionName = menuIds[item].childNodes[0].nextElementSibling.firstElementChild.firstElementChild.textContent;
-			
+			sectionName = menuIds[item].children[0].textContent;
+						
 			console.log('section name:', sectionName);
 			
 			fullItem = '<li class="col-xs-12"><a href="' + menuId + '">' + sectionName + '</a></li>';
@@ -295,7 +234,7 @@
 	
 	//start it up!
 	app.init();
-	admin.init(); //initialize admin mode for building the admin interface
+	
 	
 	/* temporary placement of test items for resume navigation */
 	
