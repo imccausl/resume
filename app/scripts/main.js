@@ -225,7 +225,7 @@
 						
 			console.log('section name:', sectionName);
 			
-			fullItem = '<li class="col-xs-12"><a href="' + menuId + '">' + sectionName + '</a></li>';
+			fullItem = '<li class="col-xs-12" style="background-color:black;"><a href="' + menuId + '">' + sectionName + '</a></li>';
 			
 			$('#r-jump-menu-items').append(fullItem);
 		}

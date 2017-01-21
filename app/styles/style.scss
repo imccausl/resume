@@ -9,7 +9,7 @@ body {
 	
 	padding-top: 60px;
 	
-	z-index: 10;
+	z-index: 5;
 }
 
 h3 {
@@ -36,8 +36,8 @@ a {
 section {
 	position: relative;
 	
-	/* z-index: 1;
-	pointer-events: none; */
+	z-index: 5;
+	pointer-events: none;
 	
 	margin: 0;
 	padding: 0;
@@ -62,9 +62,8 @@ footer {
 	margin-top: 30px;
 	
 	padding-bottom: 0;
-	
-	font-family: "Share Tech Mono";
-	
+	font-family: "VT323";
+		
 	background-color: black;
 	color: white;
 	
@@ -216,12 +215,13 @@ footer {
 	}	
 }
 
-.r-nav {
+nav#r-fixed-menu {
 	top: 0;
 	width: 100%;
-	z-index: 15;
+	z-index: 13;
 	pointer-events: auto;
-		
+	
+	
 	#r-nav-menu {
 		background-color:rgba(255, 255, 255, 0.8);
 		margin-top: 10px;
@@ -235,8 +235,8 @@ footer {
 	
 	#r-jump-menu {
 		display: none;
-		position: relative;
 		
+		margin: 0;	
 		background-color:black;
 		color: white;
 		
@@ -247,31 +247,27 @@ footer {
 		
 		#r-jump-menu-items {
 			margin: 0;
+			z-index: 15;
 			padding: 5px;
 			
 			list-style-type: none;
-									
+			background-color: black;
+			
 			h4 {
 				font-size: 1em;
 			}
 			
-			li:before {
-				content: "";
-				display: inline-block;
-				height: 100%;
-				vertical-align: middle;
-				margin-right: -0.25em;
-			}
 			
 			li {
 				position: relative;
-				display: inline-block;
+								
+				z-index: 15;
 				text-align: center;
 				
 				margin: 0;
 				padding: 5px 15px;
 				
-				height: 50px;
+				/*height: 50px;*/
 				
 				display: inline;
 				font-family: "VT323";

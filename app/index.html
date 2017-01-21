@@ -190,10 +190,11 @@
 		<script id="r-nav-template" type="text/x-handlebars-template">
 			
 			<nav class="r-nav text-center" id="r-fixed-menu" data-spy="affix" data-offset-top="420">
-				<div id="r-jump-menu" class="text-center">
+				<div class="container">
+				<div id="r-jump-menu" class="text-center row">
 					<ul id="r-jump-menu-items"><li><a href="#top" class="jump-active">{{fullName}}</a></li></ul>
 				</div>
-				
+				</div>
 				<a id="r-nav-menu" href="#" class="btn btn-default">
 					 <span id="r-nav-icon" class="fa fa-chevron-down"></span>
 				</a>	
@@ -203,13 +204,13 @@
 		</script>
 		
 	
-		<!-- JavaScript (inc. placeholders for wiredep scripts from /bower_components -->
 		<!-- build:js scripts/libraries.js -->
 		<!-- bower:js -->
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
 		<script src="/bower_components/modernizr/modernizr.js"></script>
 		<script src="/bower_components/handlebars/handlebars.js"></script>
-		<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+		<script src="/bower_components/ember/ember.debug.js"></script>
+		<script src="/bower_components/ember-data/ember-data.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 		<!-- build:js scripts/main.js -->
