@@ -37,7 +37,7 @@
 	}
 	
 	var model = {
-		path: 'http://api.ianmccausland.xyz:8080/v1/resumes?auth_key=devtest',
+		path: 'http://api.ianmccausland.xyz:8080/v1/resumes?metadata.isPublic=true',
 		resume: {},
 		header: {},
 		templates: [],
